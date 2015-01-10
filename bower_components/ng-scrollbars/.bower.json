@@ -15,7 +15,8 @@
   "license": "MIT",
   "homepage": "http://minhongrails.github.io/ng-scrollbars/",
   "dependencies": {
-    "malihu-custom-scrollbar-plugin": ">=3.0.7"
+    "malihu-custom-scrollbar-plugin": ">=3.0.7",
+    "angular": "^1.2.21"
   },
   "ignore": [
     "**/.*",
@@ -26,11 +27,11 @@
     "test",
     "tests"
   ],
-  "_release": "9f6de47537",
+  "_release": "20758e6fa1",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "9f6de475370876081a009b00b9ae1ab36b0eafdf"
+    "commit": "20758e6fa1f7b0c011258253f0786f2444dc8522"
   },
   "_source": "git://github.com/minhongrails/ng-scrollbars.git",
   "_target": "*",

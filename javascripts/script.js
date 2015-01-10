@@ -1,5 +1,5 @@
-var mainModule = angular.module('mainModule', []);
-mainModule.factory('highlighter', function() {
+var mainModule = angular.module('mainModule', ['ngScrollbars']);
+mainModule.factory('highlighter', function () {
 	return new Scrollbars.Highlighter();
 })
 
@@ -13,9 +13,22 @@ mainModule.controller('mainCtrl', function ($scope, highlighter) {
 			'ourselves and certainly own perpetual continual. It elsewhere of sometimes or my certainty. Lain no as ' +
 			'five or at high. Everything travelling set how law literature. ';
 
-	for (var i = 0; i < 12; i++) {
+	var themes = ['light', 'minimal-dark', 'light-thick', 'rounded-dots', '3d-thick', 'dark-thin', 'light-3', 'rounded' ]
+
+	for (var i = 0; i < 8; i++) {
+		var scrollbarConfig = {
+			autoHideScrollbar: false,
+			theme: 'light',
+			advanced: {
+				updateOnContentResize: true
+			},
+			setHeight: 200,
+			scrollInertia: 0
+		}
+		scrollbarConfig.theme = themes[i % 8];
 		panels.push({
-			text: text
+			text: text,
+			config: scrollbarConfig
 		});
 	}
 	$scope.panels = panels;

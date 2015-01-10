@@ -20,8 +20,8 @@ Install using bower
 ```html
 <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/jquery/jquery.mousewheel.min.js"></script>
-<script src="bower_components/ng-tiny-scrollbar/malihu-custom-scrollbar-plugin/ng-tiny-scrollbar.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min"></script>
 <script src="bower_components/ng-scrollbars/dist/scrollbars.js"></script>
 ```
 

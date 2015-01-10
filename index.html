@@ -6,8 +6,15 @@
 	<title>Ng-scrollbars by minhongrails</title>
 	<link rel="stylesheet" href="stylesheets/styles.css">
 	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+
+	<!-- external -->
+	<link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="bower_components/ng-scrollbars/src/scrollbars.js"></script>
+
+	<!-- internal -->
 	<script src="javascripts/highlight.js"></script>
 	<script src="javascripts/script.js"></script>
 	<!--[if lt IE 9]>
@@ -50,7 +57,9 @@
 
 <div ng-controller="mainCtrl">
 	<section class="panel-container">
-		<div class="panel" ng-repeat="panel in panels">
+		<div class="panel" ng-repeat="panel in panels"
+		     ng-scrollbars
+		     ng-scrollbars-config="panel.config">
 			{{panel.text}}
 		</div>
 	</section>

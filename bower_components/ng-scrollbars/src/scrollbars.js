@@ -1,24 +1,17 @@
-angular.module('ngScrollbars').directive('ioScrollbars', [function () {
-	return {
-		link: function (scope, elem, attrs) {
-
-			var height = attrs.scrollableHeight ? attrs.scrollableHeight : 'auto';
-			var right = attrs.scrollableMarginRight ? attrs.scrollableMarginRight : '0px';
-			var top =  attrs.scrollableMarginTop ? attrs.scrollableMarginTop : '0px';
-
-			elem.mCustomScrollbar({
-				autoHideScrollbar: false,
-				theme: 'light',
-				advanced:{
-					updateOnContentResize: true
+angular.module('ngScrollbars', [])
+		.directive('ngScrollbars', function () {
+			return {
+				scope: {
+					ngScrollbarsConfig: '&'
 				},
-				setHeight: height,
-				scrollInertia: 0
-			});
+				link: function (scope, elem, attrs) {
+					var config = scope.ngScrollbarsConfig();
+					if (!config) {
+						config = {};
+					}
+					elem.mCustomScrollbar(scope.ngScrollbarsConfig());
+				}
+			};
+		});
 
-			var scrollTools = $(elem).find('.mCSB_scrollTools');
-			scrollTools.css('right', right);
-			scrollTools.css('top', top);
-		}
-	};
-}]);
+
