@@ -1,7 +1,9 @@
 # Readme
 
-This is a port of [Malihu's awesome scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/) plugin to AngularJS. I needed an AngularJS scrollbar that worked well with a dark theme and was consistently styled across different browsers. I found several Angular
-scrollbars listed below but in general the styling didn't fit or they were lacking 
+This is an Angularjs plugin wrapper of
+[Malihu's custom content scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/).
+I needed an AngularJS scrollbar that worked well with a dark theme and was consistently styled across different browsers.
+I found several Angular scrollbars listed below but in general the styling didn't fit or they were lacking
 features.
 
 Ultimately I found a [Stackoverflow post](http://stackoverflow.com/questions/21306853/using-a-directive-to-make-an-element-scrollable-in-angularjs) by JMaylin that inspired me to finish
@@ -13,7 +15,7 @@ the integration effort he/she started.
 
 # Usage
 
-1. Install using bower
+* Install using bower
 
 	bower install ng-scrollbars
 
@@ -25,19 +27,19 @@ the integration effort he/she started.
 <script src="bower_components/ng-scrollbars/dist/scrollbars.js"></script>
 ```
 
-2. Include the module in your angular app
+* Include the module in your angular app
 
 ```javascript
 var myapp = angular.module('myapp', ['ngScrollbar'])
 ```
 
-3. Add the ng-scrollbars directive to an element
+* Add the ng-scrollbars directive to an element
 
 ```javascript
 <div class="panel" ng-scrollbars ng-scrollbars-config="config"> .... </div>
 ```
 
-4. Specify the configuration as an object visible within the directive's scope:
+* Specify the configuration as an object visible within the directive's scope:
 
 For example, the 'config' object referenced in step 3 could be configured like the following:
 
@@ -58,7 +60,7 @@ All configuration options available to Malihu's scrollbar are available as direc
 attributes or passed in through as a configuration object as described in step 4 above. See
 [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
 
-# Other Options
+# Other options
 
 In my search for angularjs scrollbars, I also came across a few others:
 
