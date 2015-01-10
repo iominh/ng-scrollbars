@@ -15,6 +15,9 @@
   ],
   "license": "MIT",
   "homepage": "http://minhongrails.github.io/ng-scrollbars/",
+	"dependencies": {
+		"malihu-custom-scrollbar-plugin": ">=3.0.7"
+	},
   "ignore": [
     "**/.*",
     "demo",
