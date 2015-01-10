@@ -1,4 +1,4 @@
-angular.module('ngScrollbars').directive('scrollbars', [function () {
+angular.module('ngScrollbars').directive('ioScrollbars', [function () {
 	return {
 		link: function (scope, elem, attrs) {
 

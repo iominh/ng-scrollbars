@@ -14,9 +14,10 @@
     "custom"
   ],
   "license": "MIT",
-  "homepage": "www.minh.io",
+  "homepage": "http://minhongrails.github.io/ng-scrollbars/",
   "ignore": [
     "**/.*",
+    "demo",
     "node_modules",
     "bower_components",
     "app/bower_components",
