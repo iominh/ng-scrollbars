@@ -17,9 +17,9 @@ the integration effort he/she started.
 
 1. Add ng-scrollbars and its dependencies to your main file (index.html)
 
-  you can download this by:
-  * using bower and running `bower install ng-scrollbars`
-  * Download the [production version][min] or the [development version][max].
+	This can be downloaded by
+  * Using bower and running `bower install ng-scrollbars`
+  * Or downloading the [production version][min] or the [development version][max].
 
   [min]: https://github.com/minhongrails/ng-scrollbars/blob/master/dist/scrollbars.min.js
   [max]: https://github.com/minhongrails/ng-scrollbars/blob/master/src/scrollbars.js
@@ -41,7 +41,7 @@ the integration effort he/she started.
 
 3. Add ng-scrollbar directive to any elements:
   ```html
-  <div ng-scrollbar ng-scrollbars ng-scrollbars-config="config"> .... </div>
+  <div ng-scrollbars ng-scrollbars-config="config"> .... </div>
   ```
 
 4. Specify the configuration as an object visible within the directive's scope:
@@ -77,7 +77,7 @@ the integration effort he/she started.
 	  ```
 
 All configuration options available to Malihu's scrollbar are available as directive
-attributes or passed in through as a configuration object as described in step 4 above. See
+attributes or passed in through as a configuration object as described in step 3 above. See
 [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
 
 # Other options
