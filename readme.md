@@ -15,46 +15,66 @@ the integration effort he/she started.
 
 # Usage
 
-* Install using bower
+1. Add ng-scrollbars and its dependencies to your main file (index.html)
 
-	bower install ng-scrollbars
+  you can download this by:
+  * using bower and running `bower install ng-scrollbars`
+  * Download the [production version][min] or the [development version][max].
 
-```html
-<link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="bower_components/ng-scrollbars/dist/scrollbars.js"></script>
-```
+  [min]: https://github.com/minhongrails/ng-scrollbars/blob/master/dist/scrollbars.js
+  [max]: https://github.com/minhongrails/ng-scrollbars/blob/master/src/scrollbars.js
 
-* Include the module in your angular app
+  In your web page:
 
-```javascript
-var myapp = angular.module('myapp', ['ngScrollbar'])
-```
+  ```html
+  <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="bower_components/ng-scrollbars/dist/scrollbars.js"></script>
+  ```
 
-* Add the ng-scrollbars directive to an element
+2. Set `ngScrollbars` as a dependency in your module
+  ```javascript
+  var app = angular.module('app', ['ngScrollbars'])
+  ```
 
-```javascript
-<div class="panel" ng-scrollbars ng-scrollbars-config="config"> .... </div>
-```
+3. Add ng-scrollbar directive to any elements:
+  ```html
+  <div ng-scrollbar ng-scrollbars ng-scrollbars-config="config"> .... </div>
+  ```
 
-* Specify the configuration as an object visible within the directive's scope:
+4. Specify the configuration as an object visible within the directive's scope:
 
 For example, the 'config' object referenced in step 3 could be configured like the following:
 
-```javascript
-$scope.config = {
-	autoHideScrollbar: false,
-	theme: 'light',
-	advanced:{
-		updateOnContentResize: true
-	},
-		setHeight: 200,
-		scrollInertia: 0
+	```javascript
+	$scope.config = {
+		autoHideScrollbar: false,
+		theme: 'light',
+		advanced:{
+			updateOnContentResize: true
+		},
+			setHeight: 200,
+			scrollInertia: 0
+		}
 	}
-}
-```
+	```
+
+Some system-wide settings, such as enabling the buttons, can also be set by configuring the
+ScrollBarsProvider that's included in the ngScrollbars module as referenced in step 2:
+
+	```javascript
+	var app = angular.module('app', ['ngScrollbars'])
+	app.config(function (ScrollBarsProvider) {
+		ScrollBarsProvider.defaults = {
+			scrollButtons: {
+				enable: true //enable scrolling buttons by default
+			},
+			axis: 'yx' //enable 2 axis scrollbars by default
+		};
+	});
+	```
 
 All configuration options available to Malihu's scrollbar are available as directive
 attributes or passed in through as a configuration object as described in step 4 above. See

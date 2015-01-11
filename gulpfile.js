@@ -1,9 +1,9 @@
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglifyjs');
 
 gulp.task('compress', function() {
 	gulp.src('src/*.js')
-			.pipe(uglify())
+			.pipe(uglify('scrollbars.min.js'))
 			.pipe(gulp.dest('dist'))
 });
 
