@@ -3,6 +3,14 @@ mainModule.factory('highlighter', function () {
 	return new Scrollbars.Highlighter();
 })
 
+mainModule.config(function (ScrollBarsProvider) {
+	ScrollBarsProvider.defaults = {
+		scrollButtons: {
+			enable: true //enable scrolling buttons by default
+		},
+		axis: 'yx' //enable 2 axis scrollbars by default
+	};
+});
 
 mainModule.controller('mainCtrl', function ($scope, highlighter) {
 	var panels = [];
@@ -22,8 +30,7 @@ mainModule.controller('mainCtrl', function ($scope, highlighter) {
 			advanced: {
 				updateOnContentResize: true
 			},
-			setHeight: 200,
-			scrollInertia: 0
+			setHeight: 200
 		}
 		scrollbarConfig.theme = themes[i % 8];
 		panels.push({

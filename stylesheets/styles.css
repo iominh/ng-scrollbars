@@ -695,7 +695,6 @@ dt {
 
 section {
   max-width: 650px;
-  padding: 30px 0px 50px 0px;
   margin: 20px 0;
   margin-top: 70px; }
 
@@ -703,7 +702,7 @@ section #title {
   border: 0;
   outline: none;
   margin: 0 0 50px 0;
-  padding: 0 0 5px 0; }
+  padding: 20px 0 5px 0; }
 
 section #title h1 {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -761,9 +760,13 @@ section #title .credits.right {
   padding: 20px; }
   .panel-container .panel {
     width: 250px;
-    height: 500px;
+    height: 200px;
     margin: 0 20px 20px 0;
     float: left;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
     overflow: auto;
     position: relative;
     padding: 20px;
