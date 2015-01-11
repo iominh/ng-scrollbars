@@ -21,7 +21,7 @@ the integration effort he/she started.
   * using bower and running `bower install ng-scrollbars`
   * Download the [production version][min] or the [development version][max].
 
-  [min]: https://github.com/minhongrails/ng-scrollbars/blob/master/dist/scrollbars.js
+  [min]: https://github.com/minhongrails/ng-scrollbars/blob/master/dist/scrollbars.min.js
   [max]: https://github.com/minhongrails/ng-scrollbars/blob/master/src/scrollbars.js
 
   In your web page:
