@@ -21,21 +21,31 @@ mainModule.controller('mainCtrl', function ($scope, highlighter) {
 			'ourselves and certainly own perpetual continual. It elsewhere of sometimes or my certainty. Lain no as ' +
 			'five or at high. Everything travelling set how law literature. ';
 
-	var themes 	= ['light', 'minimal', 'minimal-dark', 'light-thick', 'rounded-dots', '3d-thick',
-		'dark-thin', 'light-3', 'rounded' ];
+	var themes 	= ['light', 'dark', 'minimal', 'minimal-dark',
+		'light-2', 'dark-2', 'light-3', 'dark-3',
+		'light-thick', 'dark-thick', 'light-thin', 'dark-thin', 'light-thin', 'rounded-dark', 'rounded',
+			'rounded-dark', 'rounded-dots', 'rounded-dots-dark',
+];
 
-	for (var i = 0; i < 8; i++) {
+	for (var i = 0; i < themes.length; i++) {
 		var scrollbarConfig = {
 			advanced: {
 				updateOnContentResize: true
 			},
 			setHeight: '200px'
 		}
-		scrollbarConfig.theme = themes[i % 8];
+		scrollbarConfig.theme = themes[i % themes.length];
 
 		var cssClasses = "";
 		switch (scrollbarConfig.theme) {
+			case 'dark':
+			case 'dark-2':
+			case 'dark-3':
+			case 'dark-thick':
+			case 'dark-thin':
+			case 'rounded-dark':
 			case 'minimal-dark':
+			case 'rounded-dots-dark':
 				cssClasses = "light-background";
 				break;
 
