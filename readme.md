@@ -111,25 +111,30 @@ In my search for angularjs scrollbars, I also came across a few others:
 # Common Gotchas
 
 If the width for some reason keeps shrinking then make sure you specify the width of the CSS for all
-children elements where ng-scrollbars is applied. For example:
+children elements where ng-scrollbars is applied.
+
+Here's an example ng-scrollbars use case:
 
 	  ```html
-	  <div class="panel" ng-scrollbars>
+	  <div class="container" ng-scrollbars>
 			<h1>Title>
 			<p>A bunch of content</p>
 	  </div>
 	  ```
 
+The CSS may need to structured like the following.
+
 	  ```css
-	  .panel {
+	  .container {
 	    width: 250px;
 	  }
-	  .panel p, .panel h1 {
+	  .container p, .container h1 {
 	    width: 210px;
 	  }
 	  ```
 This is because Malihu looks at the width of the child elements and adjusts, so if the child elements
-may shrink to 0 width if nothing is specified.
+may shrink to 0 width if nothing is specified. Also note the container width is a little wider
+than its contents width because of the extra scrollbar width.
 
 # Changelog
 
