@@ -115,23 +115,23 @@ children elements where ng-scrollbars is applied.
 
 Here's an example ng-scrollbars use case:
 
-	  ```html
-	  <div class="container" ng-scrollbars>
-			<h1>Title>
-			<p>A bunch of content</p>
-	  </div>
-	  ```
+  ```html
+  <div class="container" ng-scrollbars>
+    <h1>Title>
+    <p>A bunch of content</p>
+    </div>
+    ```
 
 The CSS may need to structured like the following.
 
-	  ```css
-	  .container {
-	    width: 250px;
-	  }
-	  .container p, .container h1 {
-	    width: 210px;
-	  }
-	  ```
+    ```css
+    .container {
+      width: 250px;
+    }
+    .container p, .container h1 {
+      width: 210px;
+    }
+    ```
 This is because Malihu looks at the width of the child elements and adjusts, so if the child elements
 may shrink to 0 width if nothing is specified. Also note the container width is a little wider
 than its contents width because of the extra scrollbar width.
