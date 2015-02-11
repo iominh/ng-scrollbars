@@ -46,7 +46,7 @@ the integration effort he/she started.
 
 4. Specify the configuration as an object visible within the directive's scope:
 
-	For example, the 'config' object referenced in step 3 could be configured like the following:
+	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
 
 	  ```javascript
 	  $scope.config = {
@@ -61,7 +61,7 @@ the integration effort he/she started.
 	  }
 	  ```
 
-	Some system-wide settings, such as enabling the buttons, can also be set by configuring the
+	4b. Some system-wide settings, such as enabling the buttons, can also be set by configuring the
 	ScrollBarsProvider that's included in the ngScrollbars module as referenced in step 2:
 
 	  ```javascript
@@ -69,9 +69,28 @@ the integration effort he/she started.
 	  app.config(function (ScrollBarsProvider) {
 	    ScrollBarsProvider.defaults = {
 	      scrollButtons: {
-	        enable: true //enable scrolling buttons by default
+	        enable: true // enable scrolling buttons by default
 	      },
-	      axis: 'yx' //enable 2 axis scrollbars by default
+	      axis: 'yx' // enable 2 axis scrollbars by default
+	    };
+	  });
+	  ```
+
+	4c. System-wide defaults can also be specified. However, these settings are overridden by any
+	scope level configuration as shown in 4a. For example:
+
+	  ```javascript
+	  var app = angular.module('app', ['ngScrollbars'])
+	  app.config(function (ScrollBarsProvider) {
+	    ScrollBarsProvider.defaults = {
+	      scrollButtons: {
+	        enable: true // enable scrolling buttons by default
+	      },
+	      axis: 'yx' // enable 2 axis scrollbars by default,
+
+	      // the following settings are defined for all scrollbars unless the scrollbar has local scope configuration
+	      theme: 'dark',
+	      autoHideScrollbar: true
 	    };
 	  });
 	  ```
@@ -88,6 +107,23 @@ In my search for angularjs scrollbars, I also came across a few others:
 * [Angular-perfect-scrollbar](https://github.com/itsdrewmiller/angular-perfect-scrollbar)
 * [ngTinyScrollbar](https://github.com/yads/ngTinyScrollbar)
 
+
+# Changelog
+
+## 0.0.3
+
+Updated to allow user to set defaults to all scrollbars through the provider configuration.
+These defaults are overridden by any scope configuration.
+
+## 0.0.2
+
+Updated ngScrollbars module to allow for configuration that applies
+to all scrollbars such as the buttons and horizontal scrollbar support
+
+## 0.0.1
+
+Initial release with basic directive wrapper around Malihu
+
 # License
 
-MIT 
+MIT
