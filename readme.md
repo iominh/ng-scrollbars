@@ -116,7 +116,7 @@ Here's an example ng-scrollbars use case:
 
 ```html
 <div class="container" ng-scrollbars>
-	<h1>Title>
+	<h1>Title</h1>
 	<p>A bunch of content</p>
 </div>
 ```
