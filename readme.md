@@ -88,7 +88,8 @@ the integration effort he/she started.
 	      },
 	      axis: 'yx' // enable 2 axis scrollbars by default,
 
-	      // the following settings are defined for all scrollbars unless the scrollbar has local scope configuration
+	      // the following settings are defined for all scrollbars unless the
+	      // scrollbar has local scope configuration
 	      theme: 'dark',
 	      autoHideScrollbar: true
 	    };
@@ -107,6 +108,28 @@ In my search for angularjs scrollbars, I also came across a few others:
 * [Angular-perfect-scrollbar](https://github.com/itsdrewmiller/angular-perfect-scrollbar)
 * [ngTinyScrollbar](https://github.com/yads/ngTinyScrollbar)
 
+# Common Gotchas
+
+If the width for some reason keeps shrinking then make sure you specify the width of the CSS for all
+children elements where ng-scrollbars is applied. For example:
+
+	  ```html
+	  <div class="panel" ng-scrollbars>
+			<h1>Title>
+			<p>A bunch of content</p>
+	  </div>
+	  ```
+
+	  ```css
+	  .panel {
+	    width: 250px;
+	  }
+	  .panel p, .panel h1 {
+	    width: 210px;
+	  }
+	  ```
+This is because Malihu looks at the width of the child elements and adjusts, so if the child elements
+may shrink to 0 width if nothing is specified.
 
 # Changelog
 
