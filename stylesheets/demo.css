@@ -19,5 +19,21 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+    .panel-container .panel p, .panel-container .panel h1 {
+      width: 210px; }
+    .panel-container .panel hr {
+      background-color: transparent;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      clear: both; }
+
+.light-background {
+  background-color: #ddd !important;
+  color: #333 !important; }
+  .light-background h2 {
+    color: #333 !important; }
+  .light-background hr {
+    border-bottom: 1px solid rgba(3, 3, 3, 0.08) !important; }
 
 /*# sourceMappingURL=demo.css.map */

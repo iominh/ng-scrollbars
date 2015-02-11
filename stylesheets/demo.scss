@@ -10,9 +10,6 @@
   margin: 20px;
   padding: 20px;
 
-  //  background-color: #191919;
-  //  background-color: rgba(0,0,0,0.3);
-
   .panel {
     width: 250px;
     height: 200px;
@@ -28,6 +25,34 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
+    p, h1 {
+      width: 210px;
+    }
+
+    hr {
+      background-color: transparent;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      clear: both;
+    }
+
+  }
+
+}
+
+$black-1: #333;
+.light-background {
+  background-color: #ddd !important;
+  color: $black-1 !important;
+
+  h2 {
+    color: $black-1 !important;
+  }
+
+  hr {
+    border-bottom: 1px solid rgba(3,3,3,0.08) !important;
   }
 
 }

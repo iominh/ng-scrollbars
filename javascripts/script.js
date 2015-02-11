@@ -8,7 +8,7 @@ mainModule.config(function (ScrollBarsProvider) {
 		scrollButtons: {
 			enable: true //enable scrolling buttons by default
 		},
-		axis: 'yx' //enable 2 axis scrollbars by default
+		axis: 'yx' //enable 2 axis scrollbars by default,
 	};
 });
 
@@ -21,21 +21,30 @@ mainModule.controller('mainCtrl', function ($scope, highlighter) {
 			'ourselves and certainly own perpetual continual. It elsewhere of sometimes or my certainty. Lain no as ' +
 			'five or at high. Everything travelling set how law literature. ';
 
-	var themes = ['light', 'minimal-dark', 'light-thick', 'rounded-dots', '3d-thick', 'dark-thin', 'light-3', 'rounded' ]
+	var themes 	= ['light', 'minimal', 'minimal-dark', 'light-thick', 'rounded-dots', '3d-thick',
+		'dark-thin', 'light-3', 'rounded' ];
 
 	for (var i = 0; i < 8; i++) {
 		var scrollbarConfig = {
-			autoHideScrollbar: false,
-			theme: 'light',
 			advanced: {
 				updateOnContentResize: true
 			},
-			setHeight: 200
+			setHeight: '200px'
 		}
 		scrollbarConfig.theme = themes[i % 8];
+
+		var cssClasses = "";
+		switch (scrollbarConfig.theme) {
+			case 'minimal-dark':
+				cssClasses = "light-background";
+				break;
+
+		}
+
 		panels.push({
 			text: text,
-			config: scrollbarConfig
+			config: scrollbarConfig,
+			cssClasses: cssClasses
 		});
 	}
 	$scope.panels = panels;
