@@ -100,13 +100,6 @@ All configuration options available to Malihu's scrollbar are available as direc
 attributes or passed in through as a configuration object as described in step 3 above. See
 [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
 
-# Other options
-
-In my search for angularjs scrollbars, I also came across a few others:
-
-* [Ng-scrollbar](https://github.com/asafdav/ng-scrollbar)
-* [Angular-perfect-scrollbar](https://github.com/itsdrewmiller/angular-perfect-scrollbar)
-* [ngTinyScrollbar](https://github.com/yads/ngTinyScrollbar)
 
 # Common Gotchas
 
@@ -153,6 +146,16 @@ to all scrollbars such as the buttons and horizontal scrollbar support
 ## 0.0.1
 
 Initial release with basic directive wrapper around Malihu
+
+
+# Other options
+
+In my search for angularjs scrollbars, I also came across a few others:
+
+* [Ng-scrollbar](https://github.com/asafdav/ng-scrollbar)
+* [Angular-perfect-scrollbar](https://github.com/itsdrewmiller/angular-perfect-scrollbar)
+* [ngTinyScrollbar](https://github.com/yads/ngTinyScrollbar)
+
 
 # License
 
