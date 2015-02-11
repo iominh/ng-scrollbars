@@ -1,17 +1,23 @@
 # Readme
 
-This is an Angularjs plugin wrapper of
+This is a lightweight Angularjs plugin wrapper around
 [Malihu's custom content scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/).
+In addition to providing configurable scrollbar directives, it also allows for universal styles applied to
+all scrollbars.
+
+
+# Demo
+
+[http://minhongrails.github.io/ng-scrollbars/](http://minhongrails.github.io/ng-scrollbars/)
+
+# History
+
 I needed an AngularJS scrollbar that worked well with a dark theme and was consistently styled across different browsers.
 I found several Angular scrollbars listed below but in general the styling didn't fit or they were lacking
 features.
 
 Ultimately I found a [Stackoverflow post](http://stackoverflow.com/questions/21306853/using-a-directive-to-make-an-element-scrollable-in-angularjs) by JMaylin that inspired me to finish
 the integration effort he/she started.
-
-# Demo
-
-[http://minhongrails.github.io/ng-scrollbars/](http://minhongrails.github.io/ng-scrollbars/)
 
 # Usage
 
