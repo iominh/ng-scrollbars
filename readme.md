@@ -102,9 +102,8 @@ the integration effort he/she started.
 	});
 	```
 
-All configuration options available to Malihu's scrollbar are available as directive
-attributes or passed in through as a configuration object as described in step 3 above. See
-[Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
+All configuration options available to Malihu's scrollbar can be provided through the above
+ configuration. See [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
 
 
 # Common Gotchas
