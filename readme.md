@@ -48,53 +48,53 @@ the integration effort he/she started.
 
 	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
 
-	  ```javascript
-	  $scope.config = {
-	    autoHideScrollbar: false,
-	    theme: 'light',
-	    advanced:{
-	      updateOnContentResize: true
-	    },
-	      setHeight: 200,
-	      scrollInertia: 0
-	    }
-	  }
-	  ```
+		```javascript
+		$scope.config = {
+			autoHideScrollbar: false,
+			theme: 'light',
+			advanced:{
+				updateOnContentResize: true
+			},
+				setHeight: 200,
+				scrollInertia: 0
+			}
+		}
+		```
 
 	4b. Some system-wide settings, such as enabling the buttons, can also be set by configuring the
 	ScrollBarsProvider that's included in the ngScrollbars module as referenced in step 2:
 
-	  ```javascript
-	  var app = angular.module('app', ['ngScrollbars'])
-	  app.config(function (ScrollBarsProvider) {
-	    ScrollBarsProvider.defaults = {
-	      scrollButtons: {
-	        enable: true // enable scrolling buttons by default
-	      },
-	      axis: 'yx' // enable 2 axis scrollbars by default
-	    };
-	  });
-	  ```
+	```javascript
+	var app = angular.module('app', ['ngScrollbars']);
+	app.config(function (ScrollBarsProvider) {
+		ScrollBarsProvider.defaults = {
+			scrollButtons: {
+				enable: true // enable scrolling buttons by default
+			},
+				axis: 'yx' // enable 2 axis scrollbars by default
+		};
+	});
+	```
 
 	4c. System-wide defaults can also be specified. However, these settings are overridden by any
 	scope level configuration as shown in 4a. For example:
 
-	  ```javascript
-	  var app = angular.module('app', ['ngScrollbars'])
-	  app.config(function (ScrollBarsProvider) {
-	    ScrollBarsProvider.defaults = {
-	      scrollButtons: {
-	        enable: true // enable scrolling buttons by default
-	      },
-	      axis: 'yx' // enable 2 axis scrollbars by default,
+	```javascript
+	var app = angular.module('app', ['ngScrollbars']);
+	app.config(function (ScrollBarsProvider) {
+		ScrollBarsProvider.defaults = {
+			scrollButtons: {
+				enable: true // enable scrolling buttons by default
+			},
+			axis: 'yx' // enable 2 axis scrollbars by default,
 
-	      // the following settings are defined for all scrollbars unless the
-	      // scrollbar has local scope configuration
-	      theme: 'dark',
-	      autoHideScrollbar: true
-	    };
-	  });
-	  ```
+			// the following settings are defined for all scrollbars unless the
+			// scrollbar has local scope configuration
+			theme: 'dark',
+			autoHideScrollbar: true
+		};
+	});
+	```
 
 All configuration options available to Malihu's scrollbar are available as directive
 attributes or passed in through as a configuration object as described in step 3 above. See
@@ -122,7 +122,7 @@ Here's an example ng-scrollbars use case:
 </div>
 ```
 
-The CSS may need to structured like the following.
+The CSS may need to structured like the following:
 
 ```css
 .container {
@@ -134,7 +134,7 @@ The CSS may need to structured like the following.
 }
 ```
 
-This is because Malihu looks at the width of the child elements and adjusts, so if the child elements
+This is because Malihu looks at the width of the child elements and adjusts, so the child elements
 may shrink to 0 width if nothing is specified. Also note the container width is a little wider
 than its contents width because of the extra scrollbar width.
 
