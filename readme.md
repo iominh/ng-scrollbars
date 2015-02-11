@@ -48,18 +48,18 @@ the integration effort he/she started.
 
 	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
 
-		```javascript
-		$scope.config = {
-			autoHideScrollbar: false,
-			theme: 'light',
-			advanced:{
-				updateOnContentResize: true
-			},
-				setHeight: 200,
-				scrollInertia: 0
-			}
+	```javascript
+	$scope.config = {
+		autoHideScrollbar: false,
+		theme: 'light',
+		advanced:{
+			updateOnContentResize: true
+		},
+			setHeight: 200,
+			scrollInertia: 0
 		}
-		```
+	}
+	```
 
 	4b. Some system-wide settings, such as enabling the buttons, can also be set by configuring the
 	ScrollBarsProvider that's included in the ngScrollbars module as referenced in step 2:
