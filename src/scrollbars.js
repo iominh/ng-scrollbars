@@ -1,67 +1,79 @@
-angular.module('ngScrollbars', [])
-		.provider('ScrollBars', function () {
-			this.defaults = {
-				scrollButtons: {
-					enable: false //enable scrolling buttons by default
-				},
-				axis: 'yx' //enable 2 axis scrollbars by default
-			}
+(function () {
+  'use strict';
 
-			// TODO: can we do this without jquery?
-			$.mCustomScrollbar.defaults.scrollButtons = this.defaults.scrollButtons;
-			$.mCustomScrollbar.defaults.axis = this.defaults.axis;
+  function ScrollBarsProvider() {
+    this.defaults = {
+      scrollButtons: {
+        enable: false //enable scrolling buttons by default
+      },
+      axis: 'yx' //enable 2 axis scrollbars by default
+    }
 
-			this.$get = function ScrollBarsProvider() {
-				return {
-					defaults: this.defaults
-				}
-			}
+    // TODO: can we do this without jquery?
+    $.mCustomScrollbar.defaults.scrollButtons = this.defaults.scrollButtons;
+    $.mCustomScrollbar.defaults.axis = this.defaults.axis;
 
-		})
-		.directive('ngScrollbars', function (ScrollBars) {
+    this.$get = function ScrollBarsProvider() {
+      return {
+        defaults: this.defaults
+      }
+    }
 
-			return {
-				scope: {
-					ngScrollbarsConfig: '&'
-				},
-				link: function (scope, elem, attrs) {
-					var defaults = ScrollBars.defaults;
-					var configuredDefaults = $.mCustomScrollbar.defaults;
+  }
 
-					var config = scope.ngScrollbarsConfig();
-					if (!config) {
-						config = {};
-					}
+  function ScrollBarsDirective(ScrollBars) {
+    return {
+      scope: {
+        ngScrollbarsConfig: '&'
+      },
+      link: function (scope, elem, attrs) {
+        var defaults = ScrollBars.defaults;
+        var configuredDefaults = $.mCustomScrollbar.defaults;
 
-					// apply configured provider defaults only if the scope's config isn't defined (it has priority in that case)
-					for (var setting in defaults) {
-						if (defaults.hasOwnProperty(setting)) {
+        var config = scope.ngScrollbarsConfig();
+        if (!config) {
+          config = {};
+        }
 
-							switch (setting) {
-								case 'scrollButtons':
-									if (!config.hasOwnProperty(setting)) {
-										configuredDefaults.scrollButtons = defaults[setting];
-									}
-									break;
-								case 'axis':
-									if (!config.hasOwnProperty(setting)) {
-										configuredDefaults.axis = defaults[setting];
-									}
-									break;
-								default:
-									if (!config.hasOwnProperty(setting)) {
-										config[setting] = defaults[setting];
-									}
-									break;
-							}
+        // apply configured provider defaults only if the scope's config isn't defined (it has priority in that case)
+        for (var setting in defaults) {
+          if (defaults.hasOwnProperty(setting)) {
 
-						}
-					}
+            switch (setting) {
 
-					elem.mCustomScrollbar(config);
+              case 'scrollButtons':
+                if (!config.hasOwnProperty(setting)) {
+                  configuredDefaults.scrollButtons = defaults[setting];
+                }
+                break;
 
-				}
-			};
-		});
+              case 'axis':
+                if (!config.hasOwnProperty(setting)) {
+                  configuredDefaults.axis = defaults[setting];
+                }
+                break;
 
+              default:
+                if (!config.hasOwnProperty(setting)) {
+                  config[setting] = defaults[setting];
+                }
+                break;
 
+            }
+
+          }
+        }
+        elem.mCustomScrollbar(config);
+
+      }
+    };
+  }
+
+  angular.module('ngScrollbars', [])
+    .provider('ScrollBars', ScrollBarsProvider)
+    .directive('ngScrollbars', ScrollBarsDirective);
+
+  ScrollBarsProvider.$inject = [];
+  ScrollBarsDirective.$inject = ['ScrollBars'];
+
+})();
