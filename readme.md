@@ -138,6 +138,10 @@ than its contents width because of the extra scrollbar width.
 
 # Changelog
 
+## 0.0.4
+
+Fix so directive works with ng-strict-di
+
 ## 0.0.3
 
 Updated to allow user to set defaults to all scrollbars through the provider configuration.
