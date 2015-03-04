@@ -4,10 +4,11 @@
   "description": "Port of Malihu's jQuery Custom Scrollbar to AngularJS",
   "main": "gulpfile.js",
   "devDependencies": {
-		"gulp": "^3.8.10",
-		"gulp-minify-css": "^0.3.11",
-		"gulp-uglifyjs": "^0.5.0"
-	},
+    "gulp": "^3.8.10",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-uglifyjs": "^0.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
