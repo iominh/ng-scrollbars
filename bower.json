@@ -1,0 +1,27 @@
+{
+  "name": "ng-scrollbars-demo",
+  "version": "0.0.4",
+  "homepage": "www.minh.io",
+  "authors": [
+    "minhongrails@gmail.com"
+  ],
+  "description": "A demo project using ng-scrollbars",
+  "main": "index.html",
+  "keywords": [
+    "angularjs",
+    "scrollbars",
+    "ng-scrollbars"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-scrollbars": "~0.0.4"
+  }
+}
