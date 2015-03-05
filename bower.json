@@ -5,7 +5,7 @@
 		"minhongrails@gmail.com"
 	],
 	"description": "Port of Malihu's jQuery Custom Scrollbar to AngularJS",
-	"main": "scrollbars.js",
+	"main": "dist/scrollbars.min.js",
 	"keywords": [
 		"scrollbar",
 		"scrollbars",
