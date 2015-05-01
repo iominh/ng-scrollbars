@@ -1,6 +1,6 @@
 {
   "name": "ng-scrollbars",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Port of Malihu's jQuery Custom Scrollbar to AngularJS",
   "main": "gulpfile.js",
   "dependencies": {

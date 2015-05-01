@@ -4,9 +4,12 @@
   function ScrollBarsProvider() {
     this.defaults = {
       scrollButtons: {
-        enable: false //enable scrolling buttons by default
+        scrollAmount: 'auto', // scroll amount when button pressed
+        enable: true // scrolling buttons by default
       },
-      axis: 'yx' //enable 2 axis scrollbars by default
+      setWidth: 300,
+      scrollInertia: 400,
+      axis: 'yx' // enable 2 axis scrollbars by default,
     }
 
     // TODO: can we do this without jquery?
@@ -18,7 +21,6 @@
         defaults: this.defaults
       }
     }
-
   }
 
   function ScrollBarsDirective(ScrollBars) {
