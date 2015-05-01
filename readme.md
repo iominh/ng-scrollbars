@@ -7,15 +7,15 @@ provides an AngularJS directive with universal configuration or individual scrol
 
 # Demos
 
-## Primary Demo
+#### Primary Demo
 [http://minhongrails.github.io/ng-scrollbars/](http://minhongrails.github.io/ng-scrollbars/)
 The demo code is available on the [gh-pages branch](https://github.com/minhongrails/ng-scrollbars/tree/gh-pages) if you want to check that out too.
 
-## Basic demo
+#### Basic demo
 
 [http://minhongrails.github.io/ng-scrollbars/demo1.html](http://minhongrails.github.io/ng-scrollbars/demo1.html)
 
-## Growing scrollbar container
+#### Growing scrollbar container
 
 [http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html](http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html)
 
