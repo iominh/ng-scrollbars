@@ -1,0 +1,66 @@
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          type="text/css"/>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+    <script>
+        var app = angular.module('app', ['ngScrollbars']);
+        app.config(function (ScrollBarsProvider) {
+            // scrollbar defaults
+            ScrollBarsProvider.defaults = {
+                autoHideScrollbar: false,
+                setHeight: 100,
+                scrollInertia: 0,
+                axis: 'yx',
+                advanced: {
+                    updateOnContentResize: true
+                },
+                scrollButtons: {
+                    enable: true
+                }
+            };
+        });
+
+        function MainController($scope, $interval) {
+            // example of overriding defaults per scrollbar
+            $scope.scrollbarConfig = {
+                theme: 'dark',
+                scrollInertia: 500
+            }
+            var content = 'This demo shows a rapidly expanding scrollbar container.';
+            $scope.content = content;
+            for (var i = 0; i < 5; i++) {
+                $scope.content += content;
+            }
+
+            $interval(function () {
+                $scope.content += content;
+            }, 500);
+
+        }
+
+        app.controller('mainCtrl', MainController);
+
+
+    </script>
+</head>
+<body ng-app="app" ng-controller="mainCtrl">
+
+<header>
+    <h1>Expanding content demo</h1>
+
+    <p>This demo shows the scrollbar container periodically expanding.</p>
+</header>
+<main>
+    <div style="width: 200px;" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+        {{content}}
+    </div>
+</main>
+
+
+</body>
+
+</html>

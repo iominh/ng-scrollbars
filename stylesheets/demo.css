@@ -1,7 +1,22 @@
 .panel-container {
-  max-width: 100%;
-  margin: 20px;
-  padding: 20px; }
+  padding: 20px;
+  max-width: 340px;
+  margin: 0px auto; }
+  @media (min-width: 680px) {
+    .panel-container {
+      max-width: 680px; } }
+  @media (min-width: 1020px) {
+    .panel-container {
+      max-width: 1020px; } }
+  @media (min-width: 1360px) {
+    .panel-container {
+      max-width: 1360px; } }
+  @media (min-width: 1700px) {
+    .panel-container {
+      max-width: 1700px; } }
+  @media (min-width: 2040px) {
+    .panel-container {
+      max-width: 2040px; } }
   .panel-container .panel {
     width: 250px;
     height: 200px;

@@ -584,6 +584,7 @@ a {
   font-weight: 400;
   text-decoration: none;
 }
+
 a:hover {
   color: #ffeb9b;
 }
@@ -653,6 +654,7 @@ pre {
   overflow: auto;
   overflow-y: hidden;
 }
+
 pre code {
   color: #efefef;
   text-shadow: 0px 1px 0px #000;
@@ -708,6 +710,7 @@ dt {
   -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 }
+
 #header nav {
   max-width: 650px;
   margin: 0 auto;
@@ -715,6 +718,7 @@ dt {
   background: blue;
   margin: 6px auto;
 }
+
 #header nav li {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -725,6 +729,7 @@ dt {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 }
+
 #header nav li a {
   color: white;
   border: 1px solid #5d910b;
@@ -752,6 +757,7 @@ dt {
   display: inline-block;
   text-align: center;
 }
+
 #header nav li a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #749619), color-stop(100%, #527f0e));
   background: -webkit-linear-gradient(#749619, #527f0e);
@@ -766,14 +772,17 @@ dt {
   -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
 }
+
 #header nav li.fork {
   float: left;
   margin-left: 0px;
 }
+
 #header nav li.downloads {
   float: right;
   margin-left: 6px;
 }
+
 #header nav li.title {
   float: right;
   margin-right: 10px;
@@ -782,16 +791,18 @@ dt {
 
 section {
   max-width: 650px;
-//  padding: 30px 0px 50px 0px;
+  //  padding: 30px 0px 50px 0px;
   margin: 20px 0;
   margin-top: 70px;
 }
+
 section #title {
   border: 0;
   outline: none;
   margin: 0 0 50px 0;
   padding: 20px 0 5px 0;
 }
+
 section #title h1 {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -799,6 +810,7 @@ section #title h1 {
   text-align: center;
   line-height: 36px;
 }
+
 section #title p {
   color: #d7cfbe;
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -806,6 +818,7 @@ section #title p {
   font-size: 18px;
   text-align: center;
 }
+
 section #title .credits {
   font-size: 11px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -813,9 +826,11 @@ section #title .credits {
   color: #696969;
   margin-top: -10px;
 }
+
 section #title .credits.left {
   float: left;
 }
+
 section #title .credits.right {
   float: right;
 }
@@ -836,6 +851,7 @@ section #title .credits.right {
     display: block;
   }
 }
+
 @media print, screen and (max-width: 480px) {
   #header {
     margin-top: -20px;

@@ -1,75 +1,85 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<title>Ng-scrollbars 0.0.3 by minhongrails</title>
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ng-scrollbars 0.0.3 by minhongrails</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
 
-	<!-- external -->
-	<link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/angular/angular.min.js"></script>
-	<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
-	<script src="bower_components/ng-scrollbars/src/scrollbars.js"></script>
+    <!-- external -->
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          type="text/css"/>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="bower_components/ng-scrollbars/src/scrollbars.js"></script>
 
-	<!-- internal -->
-	<script src="javascripts/highlight.js"></script>
-	<script src="javascripts/script.js"></script>
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" href="stylesheets/ie.css">
-	<![endif]-->
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- internal -->
+    <script src="javascripts/highlight.js"></script>
+    <script src="javascripts/script.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 </head>
 <body ng-app="mainModule" ng-strict-di>
-<div id="header">
-	<nav>
-		<li class="fork"><a href="https://github.com/minhongrails/ng-scrollbars">View On GitHub</a></li>
-		<li class="downloads"><a href="https://github.com/minhongrails/ng-scrollbars/zipball/master">ZIP</a></li>
-		<li class="downloads"><a href="https://github.com/minhongrails/ng-scrollbars/tarball/master">TAR</a></li>
-		<li class="title">DOWNLOADS</li>
-	</nav>
-</div>
-<!-- end header -->
 
 <div class="wrapper">
+    <section>
+        <div id="title">
+            <h1><a href="https://github.com/minhongrails/ng-scrollbars">ng-scrollbars</a></h1>
 
-	<section>
-		<div id="title">
-			<h1>Ng-scrollbars</h1>
-
-			<p>AngularJS port of Malihu&#39;s jQuery Custom Scrollbar (3.0.7)</p>
-			<hr>
-			<span class="credits left">Project maintained by <a href="https://github.com/minhongrails/ng-scrollbars">minhongrails</a>, original by
+            <p>AngularJS port of Malihu&#39;s jQuery Custom Scrollbar</p>
+            <hr>
+			<span class="credits left">Maintained by <a href="https://github.com/minhongrails/ng-scrollbars">minhongrails</a>, original by
 				<a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Malihu</a></span>
-			<span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-		</div>
-	</section>
+            <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a
+                    href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+    </section>
 
-	<!--[if !IE]>
-	<script>fixScale(document);</script><![endif]-->
+    <!--[if !IE]>
+    <script>fixScale(document);</script><![endif]-->
 </div>
 
-<div ng-controller="mainCtrl">
-	<section class="panel-container">
-		<div class="panel" ng-repeat="panel in panels"
-		     ng-class="panel.cssClasses"
-		     ng-scrollbars
-		     ng-scrollbars-config="panel.config">
-			<h2>
-				{{panel.config.theme}}
-			</h2>
-			<hr>
-			<p>
-				{{panel.text}}
-			</p>
-		</div>
-	</section>
+
+<!--<div class="panel-container" style="display:table-cell;vertical-align:middle;" ng-controller="mainCtrl">-->
+
+    <!--<div class="panel" ng-repeat="panel in panels" -->
+         <!--ng-class="panel.cssClasses"-->
+         <!--ng-scrollbars-->
+         <!--ng-scrollbars-config="panel.config">-->
+        <!--<h2>-->
+            <!--{{panel.title}}-->
+        <!--</h2>-->
+        <!--<hr>-->
+        <!--<p>-->
+            <!--{{panel.text}}-->
+        <!--</p>-->
+    <!--</div>-->
+
+    <!--<div ></div>-->
+<!--</div>-->
+
+
+<div class="panel-container" ng-controller="mainCtrl">
+    <div class="panel" ng-repeat="panel in panels"
+         ng-class="panel.cssClasses"
+         ng-scrollbars
+         ng-scrollbars-config="panel.config">
+        <h2>
+            {{panel.title}}
+        </h2>
+        <hr>
+        <p>
+            {{panel.text}}
+        </p>
+    </div>
 </div>
 
 </body>

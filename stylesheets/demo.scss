@@ -5,10 +5,40 @@
   border-radius: $radius;
 }
 
+@mixin bp($point) {
+  @if $point == desktop {
+    @media (min-width: 1200px) { @content ; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 720px) { @content ; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 480px) { @content ; }
+  }
+}
+
+// couldn't find better way to make responsive container without fixed width breakpoints based on panel width
+// total width == # panels * ( panel-width + (2 * padding) )
+$panel-width: 300px;
+$panel-padding: 20px;
+@function panel-max-width($num-panels) {
+  @return ($num-panels * $panel-width) + ($num-panels * ($panel-padding * 2));
+}
+
 .panel-container {
-  max-width: 100%;
-  margin: 20px;
-  padding: 20px;
+  padding: $panel-padding;
+  max-width: panel-max-width(1);
+  margin: 0px auto;
+
+  // at most, support 6 panels
+  @for $i from 2 through 6 {
+    @media (min-width: panel-max-width($i)) {
+      max-width: panel-max-width($i);
+    }
+  }
+
+
+
 
   .panel {
     width: 250px;
