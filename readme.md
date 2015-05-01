@@ -94,6 +94,8 @@ The demo code is available on the [gh-pages branch](https://github.com/minhongra
 	```javascript
 	var app = angular.module('app', ['ngScrollbars']);
 	app.config(function (ScrollBarsProvider) {
+		// the following settings are defined for all scrollbars unless the
+    	// scrollbar has local scope configuration
 		ScrollBarsProvider.defaults = {
 			scrollButtons: {
 				scrollAmount: 'auto', // scroll amount when button pressed
@@ -101,9 +103,6 @@ The demo code is available on the [gh-pages branch](https://github.com/minhongra
 			},
 			scrollInertia: 400, // adjust however you want
 			axis: 'yx' // enable 2 axis scrollbars by default,
-
-			// the following settings are defined for all scrollbars unless the
-			// scrollbar has local scope configuration
 			theme: 'dark',
 			autoHideScrollbar: true
 		};
