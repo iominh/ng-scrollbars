@@ -1,24 +1,23 @@
 # Readme
 
 This is a set of customized scrollbars for AngularJS that allows you apply consistent styles and behavior across
-different browsers (including Firefox). It's built around
-[Malihu's custom content scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/), so
-all of Malihu's features and configuration options are available in addition to Angular-friendly features like
-the reusability of directives and common configuration or styles applied to all scrollbars.
+different browsers (including Firefox) that's built around
+[Malihu's jQuery Custom Scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/). It
+provides an AngularJS directive with universal configuration or individual scrollbar configuration.
 
 # Demos
 
-* Primary Demo
+## Primary Demo
 [http://minhongrails.github.io/ng-scrollbars/](http://minhongrails.github.io/ng-scrollbars/)
 The demo code is available on the [gh-pages branch](https://github.com/minhongrails/ng-scrollbars/tree/gh-pages) if you want to check that out too.
 
-* Basic demo
+## Basic demo
 
 [http://minhongrails.github.io/ng-scrollbars/demo1.html](http://minhongrails.github.io/ng-scrollbars/demo1.html)
 
-* Demo of growing scrollbar container
- [http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html](http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html)
+## Growing scrollbar container
 
+[http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html](http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html)
 
 # Download
 
@@ -81,9 +80,10 @@ The demo code is available on the [gh-pages branch](https://github.com/minhongra
 	app.config(function (ScrollBarsProvider) {
 		ScrollBarsProvider.defaults = {
 			scrollButtons: {
+			    scrollAmount: 'auto', // scroll amount when button pressed
 				enable: true // enable scrolling buttons by default
 			},
-				axis: 'yx' // enable 2 axis scrollbars by default
+			axis: 'yx' // enable 2 axis scrollbars by default
 		};
 	});
 	```
