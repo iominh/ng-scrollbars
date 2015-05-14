@@ -13,7 +13,7 @@
 			ScrollBarsProvider.defaults = {
 				autoHideScrollbar: false,
 				setHeight: 100,
-				scrollInertia: 0,
+				scrollInertia: 500,
 				axis: 'yx',
 				advanced: {
 					updateOnContentResize: true
@@ -21,26 +21,17 @@
 				scrollButtons: {
 					scrollAmount: 'auto', // scroll amount when button pressed
 					enable: true // enable scrolling buttons by default
-				}
+				},
+				theme: 'dark'
 			};
 		});
 
-		function MainController($scope, $interval) {
+		function MainController($scope) {
 			// example of overriding defaults per scrollbar
 			$scope.scrollbarConfig = {
 				theme: 'dark',
 				scrollInertia: 500
 			}
-			var content = 'This demo shows a rapidly expanding scrollbar container.';
-			$scope.content = content;
-			for (var i = 0; i < 5; i++) {
-				$scope.content += content;
-			}
-
-			$interval(function () {
-				$scope.content += content;
-			}, 500);
-
 		}
 
 		app.controller('mainCtrl', MainController);
@@ -48,19 +39,17 @@
 
 	</script>
 </head>
+
 <body ng-app="app" ng-controller="mainCtrl">
 
-<header>
-	<h1>Expanding content demo</h1>
-
-	<p>This demo shows the scrollbar container periodically expanding.</p>
-</header>
-<main>
-	<div style="width: 200px;" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
-		{{content}}
-	</div>
-</main>
-
+<div style="width: 200px;" ng-scrollbars>
+	This demo shows ng-scrollbars without a ng-scrollbars-config.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare magna ultrices tincidunt tincidunt. Donec
+	sagittis lorem placerat iaculis vehicula. Nunc bibendum quam vel rutrum rutrum. Duis nunc dolor, vehicula vitae
+	pulvinar eu, semper vitae eros. Proin auctor, felis placerat posuere dictum, massa ipsum fermentum ipsum, sit amet
+	tincidunt metus justo ut dui. Curabitur aliquet tempor dolor eget volutpat. Proin consequat metus id justo interdum,
+	id porta justo venenatis. Nullam vel tristique neque, at luctus velit. Nulla sit amet convallis felis.
+</div>
 
 </body>
 
