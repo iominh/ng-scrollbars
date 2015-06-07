@@ -8,17 +8,17 @@ provides an AngularJS directive with universal configuration or individual scrol
 # Demos
 
 #### Primary Demo
-[http://minhongrails.github.io/ng-scrollbars/](http://minhongrails.github.io/ng-scrollbars/)
+[http://iominh.github.io/ng-scrollbars/](http://iominh.github.io/ng-scrollbars/)
 
-The demo code is available on the [gh-pages branch](https://github.com/minhongrails/ng-scrollbars/tree/gh-pages) if you want to check that out too.
+The demo code is available on the [gh-pages branch](https://github.com/iominh/ng-scrollbars/tree/gh-pages) if you want to check that out too.
 
 #### Basic demo
 
-[http://minhongrails.github.io/ng-scrollbars/demo1.html](http://minhongrails.github.io/ng-scrollbars/demo1.html)
+[http://iominh.github.io/ng-scrollbars/demo1.html](http://iominh.github.io/ng-scrollbars/demo1.html)
 
 #### Growing scrollbar container
 
-[http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html](http://minhongrails.github.io/ng-scrollbars/demo2_expanding_content.html)
+[http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html](http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html)
 
 
 # Usage
@@ -28,10 +28,10 @@ The demo code is available on the [gh-pages branch](https://github.com/minhongra
 	This can be downloaded by
   * Using bower and running `bower install ng-scrollbars`
   * Or downloading the [production version][min] or the [development version][max].
-  * Or downloading the [demo zip file](https://github.com/minhongrails/ng-scrollbars/archive/gh-pages.zip)
+  * Or downloading the [demo zip file](https://github.com/iominh/ng-scrollbars/archive/gh-pages.zip)
 
-  [min]: https://github.com/minhongrails/ng-scrollbars/blob/master/dist/scrollbars.min.js
-  [max]: https://github.com/minhongrails/ng-scrollbars/blob/master/src/scrollbars.js
+  [min]: https://github.com/iominh/ng-scrollbars/blob/master/dist/scrollbars.min.js
+  [max]: https://github.com/iominh/ng-scrollbars/blob/master/src/scrollbars.js
 
   In your web page:
 
