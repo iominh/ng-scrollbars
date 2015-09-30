@@ -21,6 +21,11 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 [http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html](http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html)
 
 
+#### Demo with Angular Material
+
+[http://iominh.github.io/ng-scrollbars/10.html](http://iominh.github.io/ng-scrollbars/10.html)
+
+
 # Usage
 
 1. Add ng-scrollbars and its dependencies to your main file (index.html)
