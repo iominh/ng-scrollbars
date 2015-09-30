@@ -1,0 +1,103 @@
+<html>
+
+<head>
+
+    <!-- Angular Material CSS now available via Google CDN; version 0.10 used here -->
+    <link rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          type="text/css"/>
+
+
+</head>
+
+<body ng-app="app" ng-controller="mainCtrl">
+
+    <md-sidenav ng-scrollbars class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+        <md-content layout-padding="" ng-controller="LeftCtrl">
+            <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+                Close Sidenav Left
+            </md-button>
+            <p hide-md="" show-gt-md="">
+                This sidenav is locked open on your device. To go back to the default behavior,
+                narrow your display.
+            </p>
+        </md-content>
+
+    </md-sidenav>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="bower_components/ng-scrollbars/src/scrollbars.js"></script>
+
+    <script>
+        var app = angular.module('app', ['ngScrollbars', 'ngMaterial']);
+        app.config(function (ScrollBarsProvider) {
+            // scrollbar defaults
+            ScrollBarsProvider.defaults = {
+                autoHideScrollbar: false,
+                setHeight: 100,
+                scrollInertia: 500,
+                axis: 'yx',
+                advanced: {
+                    updateOnContentResize: true
+                },
+                scrollButtons: {
+                    scrollAmount: 'auto', // scroll amount when button pressed
+                    enable: true // enable scrolling buttons by default
+                },
+                theme: 'dark'
+            };
+        });
+
+        app.controller('mainCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
+            // example of overriding defaults per scrollbar
+            $scope.scrollbarConfig = {
+                theme: 'dark',
+                scrollInertia: 500
+            }
+
+            $scope.toggleLeft = buildToggler('left');
+
+            /**
+             * Build handler to open/close a SideNav; when animation finishes
+             * report completion in console
+             */
+            function buildToggler(navID) {
+                var debounceFn = $mdUtil.debounce(function () {
+                    $mdSidenav(navID)
+                            .toggle()
+                            .then(function () {
+                                $log.debug("toggle " + navID + " is done");
+                            });
+                }, 300);
+
+                return debounceFn;
+            }
+        });
+
+        app.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+            $scope.close = function () {
+                $mdSidenav('left').close()
+                        .then(function () {
+                            $log.debug("close LEFT is done");
+                        });
+
+            };
+        })
+
+
+    </script>
+
+</body>
+
+</html>
