@@ -28,85 +28,85 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 
 # Usage
 
-1. Add ng-scrollbars and its dependencies to your main file (index.html)
-	This can be downloaded by
-  * Using bower and running `bower install ng-scrollbars`
-  * Or downloading the [production version][min] or the [development version][max].
-  * Or downloading the [demo zip file](https://github.com/iominh/ng-scrollbars/archive/gh-pages.zip)
+    1. Add ng-scrollbars and its dependencies to your main file (index.html)
+        This can be downloaded by
+      * Using bower and running `bower install ng-scrollbars`
+      * Or downloading the [production version][min] or the [development version][max].
+      * Or downloading the [demo zip file](https://github.com/iominh/ng-scrollbars/archive/gh-pages.zip)
+    
+      [min]: https://github.com/iominh/ng-scrollbars/blob/master/dist/scrollbars.min.js
+      [max]: https://github.com/iominh/ng-scrollbars/blob/master/src/scrollbars.js
+    
+      In your web page:
+    
+      ```html
+      <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
+      <script src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+      ```
+    2. Set `ngScrollbars` as a dependency in your module
+      ```javascript
+      var app = angular.module('app', ['ngScrollbars'])
+      ```
+    3. Add ng-scrollbar directive to any elements:
+      ```html
+      <div ng-scrollbars ng-scrollbars-config="config"> .... </div>
+      ```
+    4. Specify the configuration as an object visible within the directive's scope:
 
-  [min]: https://github.com/iominh/ng-scrollbars/blob/master/dist/scrollbars.min.js
-  [max]: https://github.com/iominh/ng-scrollbars/blob/master/src/scrollbars.js
-
-  In your web page:
-
-  ```html
-  <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
-  ```
-2. Set `ngScrollbars` as a dependency in your module
-  ```javascript
-  var app = angular.module('app', ['ngScrollbars'])
-  ```
-3. Add ng-scrollbar directive to any elements:
-  ```html
-  <div ng-scrollbars ng-scrollbars-config="config"> .... </div>
-  ```
-4. Specify the configuration as an object visible within the directive's scope:
-
-	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
-
-	```javascript
-	$scope.config = {
-		autoHideScrollbar: false,
-		theme: 'light',
-		advanced:{
-			updateOnContentResize: true
-		},
-			setHeight: 200,
-			scrollInertia: 0
-		}
-	}
-	```
-
-	4b. Some system-wide settings, such as enabling the buttons, can also be set by configuring the
-	ScrollBarsProvider that's included in the ngScrollbars module as referenced in step 2:
-
-	```javascript
-	var app = angular.module('app', ['ngScrollbars']);
-	app.config(function (ScrollBarsProvider) {
-		ScrollBarsProvider.defaults = {
-			scrollButtons: {
-			    scrollAmount: 'auto', // scroll amount when button pressed
-				enable: true // enable scrolling buttons by default
-			},
-			axis: 'yx' // enable 2 axis scrollbars by default
-		};
-	});
-	```
-
-	4c. System-wide defaults can also be specified. However, these settings are overridden by any
-	scope level configuration as shown in 4a. For example:
-
-	```javascript
-	var app = angular.module('app', ['ngScrollbars']);
-	app.config(function (ScrollBarsProvider) {
-		// the following settings are defined for all scrollbars unless the
-    	// scrollbar has local scope configuration
-		ScrollBarsProvider.defaults = {
-			scrollButtons: {
-				scrollAmount: 'auto', // scroll amount when button pressed
-				enable: true // enable scrolling buttons by default
-			},
-			scrollInertia: 400, // adjust however you want
-			axis: 'yx' // enable 2 axis scrollbars by default,
-			theme: 'dark',
-			autoHideScrollbar: true
-		};
-	});
-	```
+        4a. For example, the 'config' object referenced in step 3 could be configured like the following:
+    
+        ```javascript
+        $scope.config = {
+            autoHideScrollbar: false,
+            theme: 'light',
+            advanced:{
+                updateOnContentResize: true
+            },
+                setHeight: 200,
+                scrollInertia: 0
+            }
+        }
+        ```
+    
+        4b. Some system-wide settings, such as enabling the buttons, can also be set by configuring the
+        ScrollBarsProvider that's included in the ngScrollbars module as referenced in step 2:
+    
+        ```javascript
+        var app = angular.module('app', ['ngScrollbars']);
+        app.config(function (ScrollBarsProvider) {
+            ScrollBarsProvider.defaults = {
+                scrollButtons: {
+                    scrollAmount: 'auto', // scroll amount when button pressed
+                    enable: true // enable scrolling buttons by default
+                },
+                axis: 'yx' // enable 2 axis scrollbars by default
+            };
+        });
+        ```
+    
+        4c. System-wide defaults can also be specified. However, these settings are overridden by any
+        scope level configuration as shown in 4a. For example:
+    
+        ```javascript
+        var app = angular.module('app', ['ngScrollbars']);
+        app.config(function (ScrollBarsProvider) {
+            // the following settings are defined for all scrollbars unless the
+            // scrollbar has local scope configuration
+            ScrollBarsProvider.defaults = {
+                scrollButtons: {
+                    scrollAmount: 'auto', // scroll amount when button pressed
+                    enable: true // enable scrolling buttons by default
+                },
+                scrollInertia: 400, // adjust however you want
+                axis: 'yx' // enable 2 axis scrollbars by default,
+                theme: 'dark',
+                autoHideScrollbar: true
+            };
+        });
+        ```
 
 All configuration options available to Malihu's scrollbar can be provided through the above
  configuration. See [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
