@@ -62,7 +62,7 @@
                 // can replace 'scrollTo' with other Malihu methods like
                 // 'update', 'stop', 'destroy'
                 // see http://manos.malihu.gr/jquery-custom-content-scroller/#methods-section
-                $scope.elements[elementPosition].scrollbarUpdate('scrollTo', topPX);
+                $scope.elements[elementPosition].updateScrollbar('scrollTo', topPX);
             }
 
             // only for demo purposes
@@ -126,7 +126,7 @@
 <section class="container-scrollbar"
      ng-repeat="element in elements"
      ng-scrollbars
-     ng-scrollbars-update=element.scrollbarUpdate
+     ng-scrollbars-update=element.updateScrollbar
      ng-scrollbars-config=element.scrollbarConfig>
     <h1>{{element.title}}</h1>
     <p>Retro ugh raw denim salvia letterpress. Aesthetic typewriter plaid mlkshk, taxidermy cliche synth ramps.
