@@ -22,7 +22,7 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 
 #### Updating Scrollbar Demo
 
-[https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html](https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html)
+[http://iominh.github.io/ng-scrollbars/18_update_scrollbars.html(https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html)
 
 #### Demo with Angular Material
 
@@ -135,7 +135,7 @@ app.controller('mainCtrl', function ($scope, $timeout) {
 </div>
 ```
 
-See [this demo](https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html)
+See [this demo](http://iominh.github.io/ng-scrollbars/18_update_scrollbars.html)
 
 Other options may include:
 
