@@ -20,6 +20,9 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 
 [http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html](http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html)
 
+#### Updating Scrollbar Demo
+
+[https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html](https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html)
 
 #### Demo with Angular Material
 
@@ -111,6 +114,38 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 All configuration options available to Malihu's scrollbar can be provided through the above
  configuration. See [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
 
+# Updating Scrollbars
+
+As of 0.0.6, scrollbars can be dynamically updated: 
+ 
+For example:
+ 
+```javascript
+app.controller('mainCtrl', function ($scope, $timeout) {
+    $timeout(function() {
+        $scope.updateScrollbar('scrollTo', 10);
+    });
+});
+```
+
+```html
+<div class="container" ng-scrollbars ng-scrollbars-update=updateScrollbar ng-controller="mainCtrl">
+	<h1>Title</h1>
+	<p>A bunch of content</p>
+</div>
+```
+
+See [this demo](https://github.com/iominh/ng-scrollbars/blob/gh-pages/18_update_scrollbars.html)
+
+Other options may include:
+
+* $scope.updateScrollbar('update', ...). Manually updates the scrollbar
+* $scope.updateScrollbar('disable'). Temporarily disables scrollbar
+* $scope.updateScrollbar('stop'). Stops any running scrolling animations
+* $scope.updateScrollbar('destroy'). Completely removes the scrollbar and returns element to original state
+
+See [Malihu's documentation](http://manos.malihu.gr/jquery-custom-content-scroller/#methods-section)
+ for more information on the available callbacks. 
 
 # Common Gotchas
 
@@ -142,7 +177,14 @@ This is because Malihu looks at the width of the child elements and adjusts, so 
 may shrink to 0 width if nothing is specified. Also note the container width is a little wider
 than its contents width because of the extra scrollbar width.
 
+See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
+
 # Changelog
+
+## 0.0.6
+
+Add ng-scrollbars-update attribute to update scrollbars through a method
+
 
 ## 0.0.5
 

@@ -4,12 +4,9 @@
   function ScrollBarsProvider() {
     this.defaults = {
       scrollButtons: {
-        scrollAmount: 'auto', // scroll amount when button pressed
-        enable: true // scrolling buttons by default
+        enable: true //enable scrolling buttons by default
       },
-      setWidth: 300,
-      scrollInertia: 400,
-      axis: 'yx' // enable 2 axis scrollbars by default,
+      axis: 'yx' //enable 2 axis scrollbars by default
     }
 
     // TODO: can we do this without jquery?
@@ -21,16 +18,26 @@
         defaults: this.defaults
       }
     }
+
   }
 
   function ScrollBarsDirective(ScrollBars) {
     return {
       scope: {
-        ngScrollbarsConfig: '&'
+        ngScrollbarsConfig: '&',
+        ngScrollbarsUpdate: '=',
+        element: '='
       },
       link: function (scope, elem, attrs) {
+
+        scope.ngScrollbarsUpdate = function () {
+          elem.mCustomScrollbar.apply(elem, arguments);
+        };
+        scope.element = elem;
+
         var defaults = ScrollBars.defaults;
         var configuredDefaults = $.mCustomScrollbar.defaults;
+
 
         var config = scope.ngScrollbarsConfig();
         if (!config) {
