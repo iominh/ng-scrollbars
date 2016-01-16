@@ -1,0 +1,61 @@
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          type="text/css"/>
+    <style>
+        .container {
+            width: 250px;
+        }
+
+        .container p, .container h1 {
+            width: 210px;
+        }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+    <script>
+        var app = angular.module('app', ['ngScrollbars']);
+        app.config(function (ScrollBarsProvider) {
+            // scrollbar defaults
+            ScrollBarsProvider.defaults = {
+                autoHideScrollbar: false,
+                setHeight: 100,
+                scrollInertia: 200,
+                axis: 'yx',
+                advanced: {
+                    updateOnContentResize: true
+                },
+                scrollButtons: {
+                    scrollAmount: 'auto', // scroll amount when button pressed
+                    enable: true // enable scrolling buttons by default
+                }
+            };
+        });
+
+        app.controller('mainCtrl', function($scope) {
+            $scope.scrollbarConfig = {
+                theme: 'dark',
+                scrollInertia: 500
+            }
+        });
+
+    </script>
+</head>
+
+<body ng-app="app" ng-controller="mainCtrl">
+
+<div class="container" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare magna ultrices tincidunt tincidunt. Donec
+        sagittis lorem placerat iaculis vehicula. Nunc bibendum quam vel rutrum rutrum. Duis nunc dolor, vehicula vitae
+        pulvinar eu, semper vitae eros. Proin auctor, felis placerat posuere dictum, massa ipsum fermentum ipsum, sit amet
+        tincidunt metus justo ut dui. Curabitur aliquet tempor dolor eget volutpat. Proin consequat metus id justo interdum,
+        id porta justo venenatis. Nullam vel tristique neque, at luctus velit. Nulla sit amet convallis felis.
+    </p>
+</div>
+
+</body>
+
+</html>

@@ -24,11 +24,20 @@
   function ScrollBarsDirective(ScrollBars) {
     return {
       scope: {
-        ngScrollbarsConfig: '&'
+        ngScrollbarsConfig: '&',
+        ngScrollbarsUpdate: '=',
+        element: '='
       },
       link: function (scope, elem, attrs) {
+
+        scope.ngScrollbarsUpdate = function() {
+          elem.mCustomScrollbar.apply(elem, arguments);
+        };
+        scope.element = elem;
+
         var defaults = ScrollBars.defaults;
         var configuredDefaults = $.mCustomScrollbar.defaults;
+
 
         var config = scope.ngScrollbarsConfig();
         if (!config) {

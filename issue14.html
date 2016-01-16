@@ -1,0 +1,54 @@
+<html>
+<head>
+	<link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+				type="text/css"/>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+	<script>
+		var app = angular.module('app', ['ngScrollbars']);
+		app.config(function (ScrollBarsProvider) {
+			// scrollbar defaults
+			ScrollBarsProvider.defaults = {
+				autoHideScrollbar: false,
+				setHeight: 100,
+				scrollInertia: 0,
+				axis: 'yx',
+				advanced: {
+					updateOnContentResize: true
+				},
+				scrollButtons: {
+					scrollAmount: 'auto', // scroll amount when button pressed
+					enable: true // enable scrolling buttons by default
+				}
+			};
+		});
+
+		function MainController($scope) {
+			// example of overriding defaults per scrollbar
+			$scope.scrollbarConfig = {
+				theme: 'dark',
+				scrollInertia: 500
+			}
+		}
+
+		app.controller('mainCtrl', MainController);
+
+
+	</script>
+</head>
+
+<body ng-app="app" ng-controller="mainCtrl">
+
+<div style="width: 200px;" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare magna ultrices tincidunt tincidunt. Donec
+	sagittis lorem placerat iaculis vehicula. Nunc bibendum quam vel rutrum rutrum. Duis nunc dolor, vehicula vitae
+	pulvinar eu, semper vitae eros. Proin auctor, felis placerat posuere dictum, massa ipsum fermentum ipsum, sit amet
+	tincidunt metus justo ut dui. Curabitur aliquet tempor dolor eget volutpat. Proin consequat metus id justo interdum,
+	id porta justo venenatis. Nullam vel tristique neque, at luctus velit. Nulla sit amet convallis felis.
+</div>
+
+</body>
+
+</html>
