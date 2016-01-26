@@ -1,6 +1,6 @@
 # Readme
 
-This is a set of customized scrollbars for AngularJS that allows you apply consistent styles and behavior across
+This is a set of customized scrollbars for AngularJS that allows you to apply consistent styles and behavior across
 different browsers (including Firefox) that's built around
 [Malihu's jQuery Custom Scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/). It
 provides an AngularJS directive with universal configuration or individual scrollbar configuration.
