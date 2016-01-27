@@ -1,6 +1,6 @@
 # Readme
 
-This is a set of customized scrollbars for AngularJS that allows you apply consistent styles and behavior across
+This is a set of customized scrollbars for AngularJS that allows you to apply consistent styles and behavior across
 different browsers (including Firefox) that's built around
 [Malihu's jQuery Custom Scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/). It
 provides an AngularJS directive with universal configuration or individual scrollbar configuration.
@@ -181,10 +181,17 @@ See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
 
 # Changelog
 
-## 0.0.6
+## 0.0.7
+
+Fix reported issues (#21) by making ng-scrollbars-update attribute optional. It wasn't before...
+
+``
+Error: [$compile:nonassign] Expression 'undefined' used with directive 'ngScrollbars' is non-assignable!
+``
+
+## 0.0.6 (broken)
 
 Add ng-scrollbars-update attribute to update scrollbars through a method
-
 
 ## 0.0.5
 
@@ -214,7 +221,7 @@ I needed an AngularJS scrollbar that worked well with a dark theme and was consi
 I found several Angular scrollbars listed below but in general the styling didn't fit or they were lacking
 features.
 
-Ultimately I found a [Stackoverflow post](http://stackoverflow.com/questions/21306853/using-a-directive-to-make-an-element-scrollable-in-angularjs) by JMaylin that inspired me to finish
+Ultimately I found a [Stackoverflow post](http://stackoverflow.com/questions/21306853/using-a-directive-to-make-an-element-scrollable-in-angularjs) by JMaylin that inspired me to continue
 the integration effort he/she started.
 
 # Other options

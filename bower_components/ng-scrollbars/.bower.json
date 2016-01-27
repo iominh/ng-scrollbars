@@ -1,10 +1,10 @@
 {
   "name": "ng-scrollbars",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "authors": [
     "minhongrails@gmail.com"
   ],
-  "description": "Port of Malihu's jQuery Custom Scrollbar to AngularJS",
+  "description": "Wrapper of Malihu's jQuery Custom Scrollbar to Angular",
   "main": "dist/scrollbars.min.js",
   "keywords": [
     "scrollbar",
@@ -29,13 +29,13 @@
     "test",
     "tests"
   ],
-  "_release": "0.0.6",
+  "_release": "0.0.7",
   "_resolution": {
     "type": "version",
-    "tag": "0.0.6",
-    "commit": "3be3b8a69c86e43cd03a11f12e17a4bb4d83f4e8"
+    "tag": "0.0.7",
+    "commit": "0fbaee9c0ddb86bdb13265f6daf2e9e6788e8581"
   },
   "_source": "git://github.com/iominh/ng-scrollbars.git",
-  "_target": "~0.0.6",
+  "_target": "0.0.7",
   "_originalSource": "ng-scrollbars"
 }

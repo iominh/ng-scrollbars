@@ -1,6 +1,6 @@
 {
   "name": "ng-scrollbars-demo",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "www.minh.io",
   "authors": [
     "minhongrails@gmail.com"
@@ -23,6 +23,6 @@
   ],
   "dependencies": {
     "angular": "#1.4.0",
-    "ng-scrollbars": "~0.0.6"
+    "ng-scrollbars": "#0.0.7"
   }
 }

@@ -1,3 +1,6 @@
+/**
+ * ng-scrollbars 0.0.7
+ */
 (function () {
   'use strict';
 
@@ -24,8 +27,8 @@
     return {
       scope: {
         ngScrollbarsConfig: '&',
-        ngScrollbarsUpdate: '=?bind',
-        element: '=?bind'
+        ngScrollbarsUpdate: '=?',
+        element: '=?'
       },
       link: function (scope, elem, attrs) {
 
