@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "#1.4.0",
+    "angular": "#1.4.9",
     "ng-scrollbars": "#0.0.7"
   }
 }
