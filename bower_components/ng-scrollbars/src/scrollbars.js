@@ -4,7 +4,7 @@
   function ScrollBarsProvider() {
     this.defaults = {
       scrollButtons: {
-        enable: false //enable scrolling buttons by default
+        enable: true //enable scrolling buttons by default
       },
       axis: 'yx' //enable 2 axis scrollbars by default
     }
@@ -18,22 +18,21 @@
         defaults: this.defaults
       }
     }
-
   }
 
   function ScrollBarsDirective(ScrollBars) {
     return {
       scope: {
         ngScrollbarsConfig: '&',
-        ngScrollbarsUpdate: '=',
-        element: '='
+        ngScrollbarsUpdate: '=?bind',
+        element: '=?bind'
       },
       link: function (scope, elem, attrs) {
 
-        scope.ngScrollbarsUpdate = function() {
+        scope.ngScrollbarsUpdate = function () {
           elem.mCustomScrollbar.apply(elem, arguments);
         };
-        scope.element = elem;
+        scope.elem = elem;
 
         var defaults = ScrollBars.defaults;
         var configuredDefaults = $.mCustomScrollbar.defaults;

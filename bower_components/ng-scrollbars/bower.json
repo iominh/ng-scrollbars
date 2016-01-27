@@ -1,6 +1,6 @@
 {
 	"name": "ng-scrollbars",
-	"version": "0.0.4",
+	"version": "0.0.6",
 	"authors": [
 		"minhongrails@gmail.com"
 	],
@@ -14,7 +14,7 @@
 		"custom"
 	],
 	"license": "MIT",
-	"homepage": "http://minhongrails.github.io/ng-scrollbars/",
+	"homepage": "http://iominh.github.io/ng-scrollbars/",
 	"dependencies": {
 		"malihu-custom-scrollbar-plugin": ">=3.0.7",
 		"angular": "^1.2.21"

@@ -1,34 +1,44 @@
 # Readme
 
-This is a lightweight Angularjs plugin wrapper around
-[Malihu's custom content scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/).
-In addition to providing configurable scrollbar directives, it also allows for universal styles applied to
-all scrollbars.
+This is a set of customized scrollbars for AngularJS that allows you apply consistent styles and behavior across
+different browsers (including Firefox) that's built around
+[Malihu's jQuery Custom Scrollbar by Manos Malihutsakis](http://manos.malihu.gr/jquery-custom-content-scroller/). It
+provides an AngularJS directive with universal configuration or individual scrollbar configuration.
 
+# Demos
 
-# Demo
+#### Primary Demo
+[http://iominh.github.io/ng-scrollbars/](http://iominh.github.io/ng-scrollbars/)
 
-[http://minhongrails.github.io/ng-scrollbars/](http://minhongrails.github.io/ng-scrollbars/)
+The demo code is available on the [gh-pages branch](https://github.com/iominh/ng-scrollbars/tree/gh-pages) if you want to check that out too.
 
-# History
+#### Basic demo
 
-I needed an AngularJS scrollbar that worked well with a dark theme and was consistently styled across different browsers.
-I found several Angular scrollbars listed below but in general the styling didn't fit or they were lacking
-features.
+[http://iominh.github.io/ng-scrollbars/demo1.html](http://iominh.github.io/ng-scrollbars/demo1.html)
 
-Ultimately I found a [Stackoverflow post](http://stackoverflow.com/questions/21306853/using-a-directive-to-make-an-element-scrollable-in-angularjs) by JMaylin that inspired me to finish
-the integration effort he/she started.
+#### Growing scrollbar container
+
+[http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html](http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html)
+
+#### Updating Scrollbar Demo
+
+[http://iominh.github.io/ng-scrollbars/18_update_scrollbars.html](http://iominh.github.io/ng-scrollbars/18_update_scrollbars.html)
+
+#### Demo with Angular Material
+
+[http://iominh.github.io/ng-scrollbars/10.html](http://iominh.github.io/ng-scrollbars/10.html)
+
 
 # Usage
 
 1. Add ng-scrollbars and its dependencies to your main file (index.html)
-
 	This can be downloaded by
   * Using bower and running `bower install ng-scrollbars`
   * Or downloading the [production version][min] or the [development version][max].
+  * Or downloading the [demo zip file](https://github.com/iominh/ng-scrollbars/archive/gh-pages.zip)
 
-  [min]: https://github.com/minhongrails/ng-scrollbars/blob/master/dist/scrollbars.min.js
-  [max]: https://github.com/minhongrails/ng-scrollbars/blob/master/src/scrollbars.js
+  [min]: https://github.com/iominh/ng-scrollbars/blob/master/dist/scrollbars.min.js
+  [max]: https://github.com/iominh/ng-scrollbars/blob/master/src/scrollbars.js
 
   In your web page:
 
@@ -39,17 +49,14 @@ the integration effort he/she started.
   <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
   ```
-
 2. Set `ngScrollbars` as a dependency in your module
   ```javascript
   var app = angular.module('app', ['ngScrollbars'])
   ```
-
 3. Add ng-scrollbar directive to any elements:
   ```html
   <div ng-scrollbars ng-scrollbars-config="config"> .... </div>
   ```
-
 4. Specify the configuration as an object visible within the directive's scope:
 
 	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
@@ -75,9 +82,10 @@ the integration effort he/she started.
 	app.config(function (ScrollBarsProvider) {
 		ScrollBarsProvider.defaults = {
 			scrollButtons: {
+			    scrollAmount: 'auto', // scroll amount when button pressed
 				enable: true // enable scrolling buttons by default
 			},
-				axis: 'yx' // enable 2 axis scrollbars by default
+			axis: 'yx' // enable 2 axis scrollbars by default
 		};
 	});
 	```
@@ -88,14 +96,15 @@ the integration effort he/she started.
 	```javascript
 	var app = angular.module('app', ['ngScrollbars']);
 	app.config(function (ScrollBarsProvider) {
+		// the following settings are defined for all scrollbars unless the
+    	// scrollbar has local scope configuration
 		ScrollBarsProvider.defaults = {
 			scrollButtons: {
+				scrollAmount: 'auto', // scroll amount when button pressed
 				enable: true // enable scrolling buttons by default
 			},
+			scrollInertia: 400, // adjust however you want
 			axis: 'yx' // enable 2 axis scrollbars by default,
-
-			// the following settings are defined for all scrollbars unless the
-			// scrollbar has local scope configuration
 			theme: 'dark',
 			autoHideScrollbar: true
 		};
@@ -105,6 +114,38 @@ the integration effort he/she started.
 All configuration options available to Malihu's scrollbar can be provided through the above
  configuration. See [Malihu's page](http://manos.malihu.gr/jquery-custom-content-scroller/) for more details
 
+# Updating Scrollbars
+
+As of 0.0.6, scrollbars can be dynamically updated: 
+ 
+For example:
+ 
+```javascript
+app.controller('mainCtrl', function ($scope, $timeout) {
+    $timeout(function() {
+        $scope.updateScrollbar('scrollTo', 10);
+    });
+});
+```
+
+```html
+<div class="container" ng-scrollbars ng-scrollbars-update=updateScrollbar ng-controller="mainCtrl">
+	<h1>Title</h1>
+	<p>A bunch of content</p>
+</div>
+```
+
+See [this demo](http://iominh.github.io/ng-scrollbars/18_update_scrollbars.html)
+
+Other options may include:
+
+* $scope.updateScrollbar('update', ...). Manually updates the scrollbar
+* $scope.updateScrollbar('disable'). Temporarily disables scrollbar
+* $scope.updateScrollbar('stop'). Stops any running scrolling animations
+* $scope.updateScrollbar('destroy'). Completely removes the scrollbar and returns element to original state
+
+See [Malihu's documentation](http://manos.malihu.gr/jquery-custom-content-scroller/#methods-section)
+ for more information on the available callbacks. 
 
 # Common Gotchas
 
@@ -136,7 +177,18 @@ This is because Malihu looks at the width of the child elements and adjusts, so 
 may shrink to 0 width if nothing is specified. Also note the container width is a little wider
 than its contents width because of the extra scrollbar width.
 
+See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
+
 # Changelog
+
+## 0.0.6
+
+Add ng-scrollbars-update attribute to update scrollbars through a method
+
+
+## 0.0.5
+
+Fix so by default user can press scrollbar buttons to scroll up or down.
 
 ## 0.0.4
 
@@ -156,6 +208,14 @@ to all scrollbars such as the buttons and horizontal scrollbar support
 
 Initial release with basic directive wrapper around Malihu
 
+# History
+
+I needed an AngularJS scrollbar that worked well with a dark theme and was consistently styled across different browsers.
+I found several Angular scrollbars listed below but in general the styling didn't fit or they were lacking
+features.
+
+Ultimately I found a [Stackoverflow post](http://stackoverflow.com/questions/21306853/using-a-directive-to-make-an-element-scrollable-in-angularjs) by JMaylin that inspired me to finish
+the integration effort he/she started.
 
 # Other options
 

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>ng-scrollbars 0.0.6 by Minh Nguyen</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
 
     <!-- external -->
     <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
@@ -29,58 +28,38 @@
 </head>
 <body ng-app="mainModule" ng-strict-di>
 
-<div class="wrapper">
-    <section>
-        <div id="title">
-            <h1><a href="https://github.com/iominh/ng-scrollbars">ng-scrollbars</a></h1>
+    <div class="wrapper">
+        <section>
+            <div id="title">
+                <h1><a href="https://github.com/iominh/ng-scrollbars">ng-scrollbars</a></h1>
 
-            <p>Angular wrapper of Malihu&#39;s jQuery Custom Scrollbar</p>
-            <hr>
-			<span class="credits left">Maintained by <a href="http://www.minh.io">Minh Nguyen</a>, original by
-				<a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Malihu</a></span>
-            <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a
-                    href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-    </section>
+                <p>Angular wrapper of Malihu&#39;s jQuery Custom Scrollbar</p>
+                <hr>
+                <span class="credits left">Maintained by <a href="http://www.minh.io">Minh Nguyen</a>, original by
+                    <a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Malihu</a></span>
+                <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a
+                        href="https://twitter.com/michigangraham">mattgraham</a></span>
+            </div>
+        </section>
 
-    <!--[if !IE]>
-    <script>fixScale(document);</script><![endif]-->
-</div>
-
-
-<!--<div class="panel-container" style="display:table-cell;vertical-align:middle;" ng-controller="mainCtrl">-->
-
-    <!--<div class="panel" ng-repeat="panel in panels" -->
-         <!--ng-class="panel.cssClasses"-->
-         <!--ng-scrollbars-->
-         <!--ng-scrollbars-config="panel.config">-->
-        <!--<h2>-->
-            <!--{{panel.title}}-->
-        <!--</h2>-->
-        <!--<hr>-->
-        <!--<p>-->
-            <!--{{panel.text}}-->
-        <!--</p>-->
-    <!--</div>-->
-
-    <!--<div ></div>-->
-<!--</div>-->
-
-
-<div class="panel-container" ng-controller="mainCtrl">
-    <div class="panel" ng-repeat="panel in panels"
-         ng-class="panel.cssClasses"
-         ng-scrollbars
-         ng-scrollbars-config="panel.config">
-        <h2>
-            {{panel.title}}
-        </h2>
-        <hr>
-        <p>
-            {{panel.text}}
-        </p>
+        <!--[if !IE]>
+        <script>fixScale(document);</script><![endif]-->
     </div>
-</div>
+
+    <div class="panel-container" ng-controller="mainCtrl">
+        <div class="panel" ng-repeat="panel in panels"
+             ng-class="panel.cssClasses"
+             ng-scrollbars
+             ng-scrollbars-config="panel.config">
+            <h2>
+                {{panel.title}}
+            </h2>
+            <hr>
+            <p>
+                {{panel.text}}
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
