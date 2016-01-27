@@ -1,3 +1,6 @@
+/**
+ * ng-scrollbars 0.0.7
+ */
 (function () {
   'use strict';
 
