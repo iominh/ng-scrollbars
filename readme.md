@@ -50,13 +50,17 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
   <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
   ```
 2. Set `ngScrollbars` as a dependency in your module
+
   ```javascript
   var app = angular.module('app', ['ngScrollbars'])
   ```
+  
 3. Add ng-scrollbar directive to any elements:
+
   ```html
   <div ng-scrollbars ng-scrollbars-config="config"> .... </div>
   ```
+  
 4. Specify the configuration as an object visible within the directive's scope:
 
 	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
