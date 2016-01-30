@@ -12,9 +12,13 @@ provides an AngularJS directive with universal configuration or individual scrol
 
 The demo code is available on the [gh-pages branch](https://github.com/iominh/ng-scrollbars/tree/gh-pages) if you want to check that out too.
 
-#### Basic demo
+#### Basic Demo
 
 [http://iominh.github.io/ng-scrollbars/demo1.html](http://iominh.github.io/ng-scrollbars/demo1.html)
+
+#### Full Page Automatic Demo
+
+[http://iominh.github.io/ng-scrollbars/22.html](http://iominh.github.io/ng-scrollbars/22.html)
 
 #### Growing scrollbar container
 
