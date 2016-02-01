@@ -16,10 +16,6 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 
 [http://iominh.github.io/ng-scrollbars/demo1.html](http://iominh.github.io/ng-scrollbars/demo1.html)
 
-#### Full Page Automatic Demo
-
-[http://iominh.github.io/ng-scrollbars/22.html](http://iominh.github.io/ng-scrollbars/22.html)
-
 #### Growing scrollbar container
 
 [http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html](http://iominh.github.io/ng-scrollbars/demo2_expanding_content.html)
