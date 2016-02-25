@@ -23,6 +23,45 @@
     }
   }
 
+  function render(defaults, configuredDefaults, elem, scope) {
+    elem.mCustomScrollbar('destroy');
+
+    var config = {};
+    if (scope.ngScrollbarsConfig) {
+      config = scope.ngScrollbarsConfig();
+    }
+
+    // apply configured provider defaults only if the scope's config isn't defined (it has priority in that case)
+    for (var setting in defaults) {
+      if (defaults.hasOwnProperty(setting)) {
+
+        switch (setting) {
+
+          case 'scrollButtons':
+            if (!config.hasOwnProperty(setting)) {
+              configuredDefaults.scrollButtons = defaults[setting];
+            }
+            break;
+
+          case 'axis':
+            if (!config.hasOwnProperty(setting)) {
+              configuredDefaults.axis = defaults[setting];
+            }
+            break;
+
+          default:
+            if (!config.hasOwnProperty(setting)) {
+              config[setting] = defaults[setting];
+            }
+            break;
+
+        }
+      }
+    }
+
+    elem.mCustomScrollbar(config);
+  }
+
   function ScrollBarsDirective(ScrollBars) {
     return {
       scope: {
@@ -43,45 +82,11 @@
 
         scope.$watch('ngScrollbarsConfig', function (newVal, oldVal) {
           if (newVal !== undefined) {
-            elem.mCustomScrollbar('destroy');
-
-            var config = scope.ngScrollbarsConfig;
-            if (!config) {
-              config = {};
-            }
-
-            // apply configured provider defaults only if the scope's config isn't defined (it has priority in that case)
-            for (var setting in defaults) {
-              if (defaults.hasOwnProperty(setting)) {
-
-                switch (setting) {
-
-                  case 'scrollButtons':
-                    if (!config.hasOwnProperty(setting)) {
-                      configuredDefaults.scrollButtons = defaults[setting];
-                    }
-                    break;
-
-                  case 'axis':
-                    if (!config.hasOwnProperty(setting)) {
-                      configuredDefaults.axis = defaults[setting];
-                    }
-                    break;
-
-                  default:
-                    if (!config.hasOwnProperty(setting)) {
-                      config[setting] = defaults[setting];
-                    }
-                    break;
-
-                }
-
-              }
-            }
-
-            elem.mCustomScrollbar(config);
+            render(defaults, configuredDefaults, elem, scope);
           }
         });
+
+        render(defaults, configuredDefaults, elem, scope);
       }
     };
   }
