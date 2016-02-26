@@ -28,7 +28,7 @@
 
     var config = {};
     if (scope.ngScrollbarsConfig) {
-      config = scope.ngScrollbarsConfig();
+      config = scope.ngScrollbarsConfig;
     }
 
     // apply configured provider defaults only if the scope's config isn't defined (it has priority in that case)
