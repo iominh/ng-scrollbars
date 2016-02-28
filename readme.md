@@ -185,6 +185,14 @@ See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
 
 # Changelog
 
+## 0.0.9
+
+Scrollbar configs will now dynamically update on changes. Hopefully should fix a couple of issues that users mentioned (#23, #26) 
+
+## 0.0.8
+
+Ghost release to synchronize bower with npm version numbers
+
 ## 0.0.7
 
 Fix reported issues (#21) by making ng-scrollbars-update attribute optional. It wasn't before...
