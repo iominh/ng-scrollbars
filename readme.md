@@ -185,9 +185,15 @@ See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
 
 # Changelog
 
-## 0.0.9
+## 0.0.10
+
+Fixed issue with minified version being out of sync with source
+
+## 0.0.9 (broken)
 
 Scrollbar configs will now dynamically update on changes. Hopefully should fix a couple of issues that users mentioned (#23, #26) 
+
+This version's minified version wasn't updated as reported by @florinbardosi in #27
 
 ## 0.0.8
 
