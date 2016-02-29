@@ -12,7 +12,7 @@ provides an AngularJS directive with universal configuration or individual scrol
 
 The demo code is available on the [gh-pages branch](https://github.com/iominh/ng-scrollbars/tree/gh-pages) if you want to check that out too.
 
-#### Basic demo
+#### Basic Demo
 
 [http://iominh.github.io/ng-scrollbars/demo1.html](http://iominh.github.io/ng-scrollbars/demo1.html)
 
@@ -50,13 +50,17 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
   <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
   ```
 2. Set `ngScrollbars` as a dependency in your module
+
   ```javascript
   var app = angular.module('app', ['ngScrollbars'])
   ```
+  
 3. Add ng-scrollbar directive to any elements:
+
   ```html
   <div ng-scrollbars ng-scrollbars-config="config"> .... </div>
   ```
+  
 4. Specify the configuration as an object visible within the directive's scope:
 
 	4a. For example, the 'config' object referenced in step 3 could be configured like the following:
@@ -180,6 +184,20 @@ than its contents width because of the extra scrollbar width.
 See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
 
 # Changelog
+
+## 0.0.10
+
+Fixed issue with minified version being out of sync with source
+
+## 0.0.9 (broken)
+
+Scrollbar configs will now dynamically update on changes. Hopefully should fix a couple of issues that users mentioned (#23, #26) 
+
+This version's minified version wasn't updated as reported by @florinbardosi in #27
+
+## 0.0.8
+
+Ghost release to synchronize bower with npm version numbers
 
 ## 0.0.7
 

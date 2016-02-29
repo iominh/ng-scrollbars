@@ -1,6 +1,6 @@
 {
   "name": "ng-scrollbars",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "authors": [
     "minhongrails@gmail.com"
   ],
@@ -29,13 +29,13 @@
     "test",
     "tests"
   ],
-  "_release": "0.0.7",
+  "_release": "0.0.10",
   "_resolution": {
     "type": "version",
-    "tag": "0.0.7",
-    "commit": "0fbaee9c0ddb86bdb13265f6daf2e9e6788e8581"
+    "tag": "0.0.10",
+    "commit": "2435cc3a74eb8ed8ceaf196f13786b7dc43b73f5"
   },
   "_source": "git://github.com/iominh/ng-scrollbars.git",
-  "_target": "0.0.7",
+  "_target": "0.0.10",
   "_originalSource": "ng-scrollbars"
 }
