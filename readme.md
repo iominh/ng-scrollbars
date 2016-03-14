@@ -108,7 +108,7 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
 				enable: true // enable scrolling buttons by default
 			},
 			scrollInertia: 400, // adjust however you want
-			axis: 'yx' // enable 2 axis scrollbars by default,
+			axis: 'yx', // enable 2 axis scrollbars by default,
 			theme: 'dark',
 			autoHideScrollbar: true
 		};
