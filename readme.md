@@ -143,10 +143,10 @@ See [this demo](http://iominh.github.io/ng-scrollbars/18_update_scrollbars.html)
 
 Other options may include:
 
-* $scope.updateScrollbar('update', ...). Manually updates the scrollbar
-* $scope.updateScrollbar('disable'). Temporarily disables scrollbar
-* $scope.updateScrollbar('stop'). Stops any running scrolling animations
-* $scope.updateScrollbar('destroy'). Completely removes the scrollbar and returns element to original state
+* `$scope.updateScrollbar('update', ...)`. Manually updates the scrollbar
+* `$scope.updateScrollbar('disable')`. Temporarily disables scrollbar
+* `$scope.updateScrollbar('stop')`. Stops any running scrolling animations
+* `$scope.updateScrollbar('destroy')`. Completely removes the scrollbar and returns element to original state
 
 See [Malihu's documentation](http://manos.malihu.gr/jquery-custom-content-scroller/#methods-section)
  for more information on the available callbacks. 
