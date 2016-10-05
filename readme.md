@@ -185,6 +185,10 @@ See [this demo](http://iominh.github.io/ng-scrollbars/shrink.html)
 
 # Changelog
 
+## 0.0.11
+
+Fix so package.json entry points to src/scrollbars.js and not src/main.js
+
 ## 0.0.10
 
 Fixed issue with minified version being out of sync with source
