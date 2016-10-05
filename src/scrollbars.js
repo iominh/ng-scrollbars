@@ -1,5 +1,5 @@
 /**
- * ng-scrollbars 0.0.9
+ * ng-scrollbars 0.0.11
  */
 (function () {
   'use strict';
@@ -67,6 +67,7 @@
       scope: {
         ngScrollbarsConfig: '=?',
         ngScrollbarsUpdate: '=?',
+        ngScrollTo: '=?',
         element: '=?'
       },
       link: function (scope, elem, attrs) {
@@ -83,6 +84,13 @@
         scope.$watch('ngScrollbarsConfig', function (newVal, oldVal) {
           if (newVal !== undefined) {
             render(defaults, configuredDefaults, elem, scope);
+          }
+        });
+
+        scope.$watch('ngScrollTo', function (newVal, oldVal) {
+          if (newVal !== undefined) {
+            elem.mCustomScrollbar('scrollTo', newVal);
+            scope.ngScrollTo = undefined;
           }
         });
 

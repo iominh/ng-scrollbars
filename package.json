@@ -1,6 +1,6 @@
 {
   "name": "ng-scrollbars",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Wrapper of Malihu's jQuery Custom Scrollbar to Angular",
   "main": "src/scrollbars.js",
   "dependencies": {
