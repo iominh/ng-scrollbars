@@ -81,9 +81,15 @@
           elem.mCustomScrollbar.apply(elem, arguments);
         };
 
-        scope.$watch('ngScrollbarsConfig', function (newVal, oldVal) {
+        // scope.$watch('ngScrollbarsConfig', function (newVal, oldVal) {
+        //   if (newVal !== undefined) {
+        //     render(defaults, configuredDefaults, elem, scope);
+        //   }
+        // });
+
+        scope.$watch('ngScrollbarsUpdate', function(newVal) {
           if (newVal !== undefined) {
-            render(defaults, configuredDefaults, elem, scope);
+            elem.mCustomScrollbar.apply(elem, newVal, [].slice.call(arguments));
           }
         });
 

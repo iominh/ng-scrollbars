@@ -1,0 +1,145 @@
+<html>
+<head>
+    <link rel="stylesheet" href="node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"
+          type="text/css"/>
+    <style>
+
+        .container {
+            margin: 15px;
+        }
+        @media (min-width: 800px) {
+            .container {
+                margin: 30px auto;
+                width: 800px;
+            }
+        }
+
+        .container-scrollbar, .scrollbar-stats {
+            position: relative;
+            width: 250px;
+            margin: 5px 30px 5px 30px;
+            border: 1px solid #f1f1f1;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .container-scrollbar p, .container-scrollbar h1 {
+            width: 210px;
+        }
+        .scrollbar-stats {
+            background-color: #f1f1f1;
+        }
+
+
+    </style>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="src/scrollbars.js"></script>
+    <script>
+        var app = angular.module('app', ['ngScrollbars']);
+        app.config(function (ScrollBarsProvider) {
+            ScrollBarsProvider.defaults = {
+                autoHideScrollbar: false,
+                setHeight: 200,
+                scrollInertia: 500,
+                theme: 'dark',
+                axis: 'yx',
+                advanced: {
+                    updateOnContentResize: true
+                },
+                scrollButtons: {
+                    scrollAmount: 'auto', // scroll amount when button pressed
+                    enable: true // enable scrolling buttons by default
+                }
+            };
+        });
+
+        app.controller('mainCtrl', function ($scope) {
+
+            function scrollTo(topPX, elementPosition) {
+                // can replace 'scrollTo' with other Malihu methods like
+                // 'update', 'stop', 'destroy'
+                // see http://manos.malihu.gr/jquery-custom-content-scroller/#methods-section
+                $scope.elements[elementPosition].updateScrollbar('scrollTo', topPX);
+            }
+
+            // only for demo purposes
+            function updateStatsDisplay(position, mcs) {
+                $scope.elements[position].mcs = {
+                    top: mcs.top,
+                    draggerTop: mcs.draggerTop,
+                    topPct: mcs.topPct,
+                    direction: mcs.direction
+                }
+                $scope.$apply();
+            }
+
+            $scope.elements = [{
+                title: 'Element 0',
+                scrollbarConfig: {
+                    callbacks: {
+                        onScroll: function () {
+                            scrollTo(this.mcs.top, 1, {
+                                scrollInertia: 600
+                            });
+                            updateStatsDisplay(0, this.mcs);
+                        },
+                        whileScrolling: function() {
+                            updateStatsDisplay(1, this.mcs);
+                        }
+                    }
+                },
+                scrollbarUpdate: null // set by directive
+            }, {
+                title: 'Element 1',
+                scrollbarConfig: {
+                    callbacks: {
+                        onScroll: function () {
+                            scrollTo(this.mcs.top, 0, {
+                                scrollInertia: 600
+                            });
+                            updateStatsDisplay(1, this.mcs);
+                        },
+                        whileScrolling: function() {
+                            updateStatsDisplay(1, this.mcs);
+                        }
+                    }
+                },
+                scrollbarUpdate: null // set by directive
+            }];
+
+        });
+    </script>
+</head>
+
+<body ng-app="app" ng-controller="mainCtrl" class="container">
+
+<div class="scrollbar-stats" ng-repeat="element in elements">
+    <h2>{{element.title}}</h2>
+    <p>this.mcs.top: {{element.mcs.top}}</p>
+    <p>this.mcs.draggerTop: {{element.mcs.draggerTop}}</p>
+    <p>this.mcs.topPct: {{element.mcs.topPct}}</p>
+</div>
+
+<section class="container-scrollbar"
+     ng-repeat="element in elements"
+     ng-scrollbars
+     ng-scrollbars-update=element.updateScrollbar
+     ng-scrollbars-config=element.scrollbarConfig>
+    <h1>{{element.title}}</h1>
+    <p>Retro ugh raw denim salvia letterpress. Aesthetic typewriter plaid mlkshk, taxidermy cliche synth ramps.
+        Helvetica whatever scenester waistcoat, thundercats cliche art party sartorial dreamcatcher chia.
+        Retro ugh raw denim salvia letterpress. Aesthetic typewriter plaid mlkshk, taxidermy cliche synth ramps.
+        Helvetica whatever scenester waistcoat, thundercats cliche art party sartorial dreamcatcher chia.
+        Retro ugh raw denim salvia letterpress. Aesthetic typewriter plaid mlkshk, taxidermy cliche synth ramps.
+        Helvetica whatever scenester waistcoat, thundercats cliche art party sartorial dreamcatcher chia.
+        Retro ugh raw denim salvia letterpress. Aesthetic typewriter plaid mlkshk, taxidermy cliche synth ramps.
+        Helvetica whatever scenester waistcoat, thundercats cliche art party sartorial dreamcatcher chia.
+    </p>
+</section>
+
+</body>
+
+</html>

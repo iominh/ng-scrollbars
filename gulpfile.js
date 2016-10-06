@@ -1,13 +1,19 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglifyjs');
 var ngAnnotate = require('gulp-ng-annotate');
+var browserSync = require('browser-sync').create();
 
-gulp.task('compress', function() {
+gulp.task('package', function() {
 	gulp.src('src/*.js')
     .pipe(ngAnnotate())
     .pipe(uglify('scrollbars.min.js'))
-			.pipe(gulp.dest('dist'))
+	.pipe(gulp.dest('dist'))
 });
 
-gulp.task('default', ['compress'], function(){
+gulp.task('dev', function() {
+    browserSync.init({
+        server: "./"
+    });	
 });
+
+gulp.task('default', ['package']);
