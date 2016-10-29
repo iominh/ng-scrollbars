@@ -49,6 +49,10 @@ The demo code is available on the [gh-pages branch](https://github.com/iominh/ng
   <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
   ```
+  Note:
+   'jquery.js' and 'mCustomScrollbar.js' scripts should be moved before 'angular.js' else it will throw error as given in this issue
+   https://github.com/iominh/ng-scrollbars/issues/45
+  
 2. Set `ngScrollbars` as a dependency in your module
 
   ```javascript
