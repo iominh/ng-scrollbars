@@ -68,9 +68,12 @@
         ngScrollbarsConfig: '=?',
         ngScrollbarsUpdate: '=?',
         ngScrollTo: '=?',
-        element: '=?'
+        element: '=?',
+        ngScrollbarsDisabled: '=?'
       },
       link: function (scope, elem, attrs) {
+        
+        if (scope.ngScrollbarsDisabled === true) return;
 
         scope.elem = elem;
 
